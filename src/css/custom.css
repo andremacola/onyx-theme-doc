@@ -37,7 +37,7 @@ html[data-theme=dark] {
   width: 100%;
   max-width: 457px;
   height: 210px;
-  margin: auto;
+  margin: 0 auto 10px auto;
 }
 
 html[data-theme=dark] .onyx-logo {
