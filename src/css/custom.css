@@ -56,3 +56,10 @@ html[data-theme=dark] {
 .button--secondary:hover {
   color: #FFF;
 }
+
+/* MARKDOWN */
+
+sup {
+  vertical-align: middle;
+  color: #666;
+}

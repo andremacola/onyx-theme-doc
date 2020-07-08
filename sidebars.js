@@ -1,14 +1,13 @@
 module.exports = {
   someSidebar: {
-    Instalação: [
-      'instalacao',
+    Começando: [
+      'introduction',
+      'install',
+      {
+        'Gulp e LiveReload': ['gulp', 'javascripts', 'styles'],
+      }
       // 'estrutura',
     ],
-    Começando: [
-      'introducao'
-    ],
-    Guias: [
-      'hooks'
-    ],
+    Guias: [],
   },
 };
