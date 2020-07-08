@@ -20,6 +20,8 @@ Para o desenvolvimento o [Onyx Theme](https://github.com/andremacola/onyx-theme)
 
 ## Live Reload
 
+<div class='embed-container'><iframe src='https://www.youtube.com/embed/LaJSyYPDyBQ?rel=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 Configure as variáveis no arquivo `.env` localizado na raiz da pasta do tema.
 
 :::info

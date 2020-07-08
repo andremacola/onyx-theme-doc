@@ -82,3 +82,22 @@ sup {
 html[data-theme=dark] sup {
   color: #999;
 }
+
+.markdown .embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin-bottom: var(--ifm-leading);
+}
+
+.markdown .embed-container iframe,
+.markdown .embed-container object,
+.markdown .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
