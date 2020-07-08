@@ -56,10 +56,11 @@ function Feature({imageUrl, title, description}) {
 }
 
 const OnyxLogo = () => {
-  const {siteConfig = {}} = useDocusaurusContext();
-  const {isDarkTheme, setLightTheme, setDarkTheme} = useThemeContext();
-  const logo = (isDarkTheme) ? 'img/logo-light.png' : 'img/logo.png';
-  return <img src={logo} alt={siteConfig.title}/>
+  // const {siteConfig = {}} = useDocusaurusContext();
+  // const {isDarkTheme, setLightTheme, setDarkTheme} = useThemeContext();
+  // const logo = (isDarkTheme) ? 'img/logo-light.png' : 'img/logo.png';
+  // return <img src={logo} alt={siteConfig.title}/>
+  return <div className='onyx-logo'></div>;
 };
 
 function Home() {

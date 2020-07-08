@@ -7,11 +7,12 @@ module.exports = {
   organizationName: 'andremacola', // Usually your GitHub org/user name.
   projectName: 'onyx-theme-doc', // Usually your repo name.
   themeConfig: {
+    image: 'img/ogimage.png',
     navbar: {
       title: 'Onyx Theme',
       logo: {
         alt: 'Onyx Theme',
-        src: 'img/logo.svg',
+        src: 'img/logo-icon.svg',
       },
       links: [
         {

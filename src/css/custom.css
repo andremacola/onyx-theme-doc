@@ -29,6 +29,21 @@ html[data-theme=dark] {
   --ifm-onyx-hero-color: #fff;
 }
 
+.onyx-logo {
+  background-image: url('/onyx-theme-doc/img/logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  max-width: 457px;
+  height: 210px;
+  margin: auto;
+}
+
+html[data-theme=dark] .onyx-logo {
+  background-image: url('/onyx-theme-doc/img/logo-light.svg');
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
