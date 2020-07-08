@@ -1,11 +1,11 @@
 module.exports = {
   title: 'Onyx Theme',
   tagline: 'Documentação para o Tema Onyx do WordPress',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://andremacola.github.io',
+  baseUrl: '/onyx-theme-doc',
   favicon: 'img/favicon.ico',
   organizationName: 'andremacola', // Usually your GitHub org/user name.
-  projectName: 'onyx-theme', // Usually your repo name.
+  projectName: 'onyx-theme-doc', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'Onyx Theme',
