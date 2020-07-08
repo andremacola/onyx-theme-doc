@@ -63,3 +63,7 @@ sup {
   vertical-align: middle;
   color: #666;
 }
+
+html[data-theme=dark] sup {
+  color: #999;
+}
