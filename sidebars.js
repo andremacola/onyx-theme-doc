@@ -13,7 +13,7 @@ module.exports = {
         'install',
         {
           type: 'category',
-          label: 'Gulpe e LiveReload',
+          label: 'Gulp e LiveReload',
           collapsed: false,
           items: ['gulp', 'javascripts', 'styles'],
           
