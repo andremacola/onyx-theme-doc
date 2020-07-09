@@ -7,6 +7,9 @@ module.exports = {
   organizationName: 'andremacola', // Usually your GitHub org/user name.
   projectName: 'onyx-theme-doc', // Usually your repo name.
   themeConfig: {
+    // prism: {
+    //   theme: require('prism-react-renderer/themes/dracula'),
+    // },
     image: 'img/ogimage.png',
     navbar: {
       title: 'Onyx Theme',
