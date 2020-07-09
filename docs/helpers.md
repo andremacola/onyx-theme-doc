@@ -152,7 +152,7 @@ if (O::valid_url('https://github.com')) {
 
 ---
 
-### `static_path()`
+### `O::static_path()`
 
 Retorna o caminho da url do `asset` baseado na localização do arquivo  
 se é um arquivo remoto ou local. Usa o método [static_uri](#ostatic_uri).
