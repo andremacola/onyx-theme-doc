@@ -74,14 +74,8 @@ html[data-theme=dark] .onyx-logo {
 
 /* MARKDOWN */
 
-sup {
-  vertical-align: middle;
-  color: #666;
-}
-
-html[data-theme=dark] sup {
-  color: #999;
-}
+sup { vertical-align: middle; color: #666; }
+html[data-theme=dark] sup { color: #999; }
 
 .markdown .embed-container {
   position: relative;
@@ -101,3 +95,6 @@ html[data-theme=dark] sup {
   width: 100%;
   height: 100%;
 }
+
+.markdown .admonition-caution .admonition-content a { color: #333; }
+html[data-theme=dark] .markdown .admonition-caution .admonition-content a { color: #FFF; }

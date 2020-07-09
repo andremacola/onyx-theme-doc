@@ -4,25 +4,27 @@ title: Introdução
 sidebar_label: Introdução
 ---
 
-O [Onyx Theme](https://github.com/andremacola/onyx-theme) tem um modo específico de funcionamento e estrutura de pastas. Ele não segue a estrutura padrão de desenvolvimento do WordPress
+O [Onyx Theme](https://github.com/andremacola/onyx-theme) tem um modo específico de funcionamento e estrutura de pastas. Ele não segue a estrutura padrão de desenvolvimento do WordPress.
+
+Todos as queries e templates **são gerenciados** pelos `controllers`/`timber` que relacionam com as `views`. Veja mais informações em [Views](views).
 
 ---
 
 ## Estrutura de Pastas
 
-- **`core/`** - <sup>é onde reside toda a estrutura principal do tema</sup>
-	- `./api` - <sup>coloque todos os seus controllers/classes de integração com a REST API do WP aqui.</sup>
-	- `./app` - <sup>classes do Onyx Theme, não altere nada.</sup>
-	- `./config` - <sup>reside todas as principais configurações de funcionamento do seu projeto.</sup>
-	- `./controllers` - <sup>controladores de requisição das páginas e relacionamento com os twig templates</sup>
-	- `./includes` - <sup>suas classes e funções próprias</sup>
-	- `./lang` - <sup>traduções</sup>
+- **`core/`** - <sup>É onde reside toda a estrutura principal do tema</sup>
+  - `./api` - <sup>Coloque todos os seus controllers/classes de integração com a REST API do WP aqui.</sup>
+  - `./app` - <sup>Classes do Onyx Theme, não altere nada.</sup>
+  - `./config` - <sup>Reside todas as principais configurações de funcionamento do seu projeto.</sup>
+  - `./controllers` - <sup>Controladores de requisição das páginas e relacionamento com os templates do Twig</sup>
+  - `./includes` - <sup>Suas classes e funções próprias.</sup>
+  - `./lang` - <sup>Traduções</sup>
 
-- **`src/`** - <sup>arquivos fontes para estilos e javascripts</sup>
-	- `./sass`
-	- `./js`
+- **`src/`** - <sup>Arquivos fontes para estilos e javascripts.</sup>
+  - `./sass`
+  - `./js`
 
-- **`views/`** - <sup>Twig templates</sup>
+- **`views/`** - <sup>Templates Twig</sup>
 
 ---
 
