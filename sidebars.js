@@ -22,6 +22,26 @@ module.exports = {
     },
 
     /**
+     * CONFIGURAÇÕES
+     */
+    {
+      type: 'category',
+      label: 'Configurações',
+      collapsed: false,
+      items: [
+        'app',
+        'assets',
+        'hooks',
+        'images',
+        'mail',
+        'sidebars',
+        'support',
+        'cpts',
+        'taxonomies',
+      ],
+    },
+
+    /**
      * GUIAS
      */
     {
@@ -29,7 +49,29 @@ module.exports = {
       label: 'Guias',
       collapsed: false,
       items: [
+        'controllers',
+        'views',
+        'rest',
         'helpers',
+      ],
+    },
+
+    /**
+     * REFERENCIAS
+     */
+    {
+      type: 'category',
+      label: 'Referências',
+      collapsed: false,
+      items: [
+        'class-boot',
+        'class-columns',
+        'class-controller',
+        'class-cpt',
+        'class-setup',
+        'class-sidebar',
+        'class-taxonomy',
+        'filters-actions'
       ],
     },
 
