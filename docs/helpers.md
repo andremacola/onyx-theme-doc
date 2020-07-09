@@ -358,7 +358,7 @@ O::print( 'version' ); // 1.0
 // Exemplo de uso
 namespace Onyx;
 if ( O::is_dev() ) {
-  echo "É um desenolvedor";
+  echo "É um desenvolvedor";
 }
 ```
 
