@@ -8,7 +8,9 @@ O [Onyx Theme](https://github.com/andremacola/onyx-theme) utiliza o [SASS](https
 
 Os arquivos fontes estão localizados na pasta `src/sass` e já conta com uma estrutura inicial para criação que você pode alterar conforme as suas necessidades.
 
-Para carregar estilos provenientes da pasta `node_modules`, você não precisa setar o caminho completo. Veja o exemplo a seguir
+Para carregar estilos provenientes da pasta `node_modules`, você não precisa setar o caminho completo.
+
+Veja o exemplo a seguir:
 
 ```scss
 // carregar estilo do arquivo

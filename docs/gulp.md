@@ -34,4 +34,4 @@ Após configurado, caso esteja com o projeto aberto no navegador, atualize a pá
 
 Todos os arquivos fontes tanto do javascript quanto do sass estão localizados na pasta `src/`. Os arquivos compilados estarão em suas respectivas pastas localizadas em `assets/`
 
-Nesta versão o ***Onyx Theme*** não faz tratamento de imagens
+Nesta versão o ***Onyx Theme*** não faz tratamento de imagens.

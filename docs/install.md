@@ -4,7 +4,7 @@ title: Instalação
 sidebar_label: Instalação
 ---
 
-Para Instalar o [Onyx Theme](https://github.com/andremacola/onyx-theme) baixe a versão desejada na área de [releases](https://github.com/andremacola/onyx-theme/releases) do Github ou diretamente da [branch principal](https://github.com/andremacola/onyx-theme/zipball/master)
+Para Instalar o [Onyx Theme](https://github.com/andremacola/onyx-theme) baixe a versão desejada na área de [releases](https://github.com/andremacola/onyx-theme/releases) do Github ou diretamente da [branch principal.](https://github.com/andremacola/onyx-theme/zipball/master)
 
 ---
 

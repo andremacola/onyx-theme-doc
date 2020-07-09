@@ -84,7 +84,7 @@ $this->taxs     = O::load( 'taxonomies' );
 
 ### `O::array_filter_keys()`
 
-Filtrar array multidimensional recursivamente removendo as chaves passadas como parâmetro.
+*Filtrar array multidimensional recursivamente removendo as chaves passadas como parâmetro.*
 
 `O::array_filter_keys( $arr, $filter )`
 
@@ -116,7 +116,7 @@ $app_filtered = O::array_filter_keys( $app, $remove );
 
 ### `O::is_amp()`
 
-Método para funcionamento do plugin [AMP](https://br.wordpress.org/plugins/amp/). Verifica se a página atual é uma página **AMP**.
+*Método para funcionamento do plugin [AMP](https://br.wordpress.org/plugins/amp/). Verifica se a página atual é uma página* **AMP**.
 
 `@return bool`
 
@@ -132,7 +132,7 @@ if (O::is_amp()) {
 
 ### `O::valid_url()`
 
-Valida uma url a partir de uma **string**.
+*Validar uma url a partir de uma* **string**.
 
 `O::valid_url( $uri )`
 
@@ -154,8 +154,8 @@ if (O::valid_url('https://github.com')) {
 
 ### `O::static_path()`
 
-Retorna o caminho da url do `asset` baseado na localização do arquivo  
-se é um arquivo remoto ou local. Usa o método [static_uri](#ostatic_uri).
+*Retorna o caminho da url do `asset` baseado na localização do arquivo*  
+*se é um arquivo remoto ou local. Usa o método* [static_uri](#ostatic_uri).
 
 `O::static_path( $file )`
 
@@ -175,18 +175,18 @@ O::static_path( 'assets/css/home.css' ) // http://site.onyx.local/app/themes/ony
 
 ### `O::static_uri()`
 
-Retorna o diretório dos `assets` de acordo com a constante de ambiente `ONYX_STATIC`  
-(definida no parâmetro `static` em `./conf/app.php`).
+*Retorna o diretório dos `assets` de acordo com a constante de ambiente `ONYX_STATIC`*  
+*(definida no parâmetro `static` em `./conf/app.php`).*
 
-O padrão do subdomínio será: `//{$subdomain}.domain.tld/THEME_FOLDER/assets`
+*O padrão do subdomínio será: `//{$subdomain}.domain.tld/THEME_FOLDER/assets`*
 
 :::info
-Para utilizar a constante ***ONIX_STATIC*** você precisará configurar um cdn ou um subdomínio apontando para a pasta do tema em seu servidor.
+Para utilizar a constante ***ONIX_STATIC*** você precisará configurar um cdn ou um subdomínio apontando para a pasta `themes` do WordPress em seu servidor.
 :::
 
 :::caution
 Prefira utilize o método [`O::static_path()`](#static_path)  
-Utilize este método caso queira personalizar o retorno em uma função própria. Para mais informações veja a declaração do método *static_path()* no arquivo ***./app/class-onyx-helpers.php***
+Utilize este método caso queira personalizar o retorno em uma função própria. Para mais informações veja a declaração do método *static_path()* no arquivo [`class-onyx-helpers.php`](https://github.com/andremacola/onyx-theme/blob/8d1633d9b6b0814ce9ead8a8fd0deb8c138ffe57/core/app/class-onyx-helpers.php#L103)
 :::
 
 ```php
