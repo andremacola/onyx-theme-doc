@@ -30,7 +30,7 @@ Essas funções são métodos estáticos da classe `\Onyx\O`.
 
 `@return object|false`
 
-***Variável de configuração:*** pode ser o nome qualquer arquivo que se encontre na pasta `./config/`  
+***Variável de configuração:*** pode ser o nome qualquer arquivo que se encontre na pasta `./core/config/`  
 Ex: `app | assets | hooks | images | mail | support`
 
 Verifique os arquivos para retornar.
@@ -63,7 +63,7 @@ O::conf('hooks')->filters['add']; // Objeto|Array dos filtros adicionados
 
 `@return array|object|false`
 
-***Nome do Arquivo:*** o arquivo obrigatoriamente tem que estar na pasta `./config/`  
+***Nome do Arquivo:*** o arquivo obrigatoriamente tem que estar na pasta `./core/config/`  
 
 ```php
 // Exemplos de uso
