@@ -195,14 +195,14 @@ somente o parâmetro **`name(s)`** é obrigatório, podentro ser uma *string* ou
   $cpt->names([
     'name'   => 'Product',
     'plural' => 'Products',
-    'slug'   => 'product'
+    'slug'   => 'product',
   ]);
 
   // assign post type arguments
   $cpt->options([
     'show_in_rest'  => true,
     'menu_position' => 10,
-    'supports'      => ['title', 'editor', 'thumbnail']
+    'supports'      => ['title', 'editor', 'thumbnail'],
   ]);
 
   // set post type icon
@@ -218,7 +218,7 @@ somente o parâmetro **`name(s)`** é obrigatório, podentro ser uma *string* ou
       'sort'     => 'meta_field_1',       // sort by meta_field_1
       'numeric'  => false,                // is alphabetically
       'populate' => 'get_meta_field_1',   // get content from get_meta_field_1() function
-    ]
+    ],
   ]);
 	
   // METHOD 2: Add Columns
@@ -236,7 +236,7 @@ somente o parâmetro **`name(s)`** é obrigatório, podentro ser uma *string* ou
     'Date',
     'Column 1',
     'Column 2',
-    'Title'
+    'Title',
   ]);
 
   $cpt->register();
