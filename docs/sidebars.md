@@ -4,7 +4,9 @@ title: Registro de Sidebars
 sidebar_label: Sidebars
 ---
 
-Criação de Sidebars personalizadas para uso em *Aparências -> Widgets* e no front-end.
+Criação de Sidebars personalizadas para uso em *Aparências -> Widgets* e no front-end em `./core/config/sidebars.php`
+
+---
 
 ## Parâmetros
 
@@ -20,6 +22,8 @@ Criação de Sidebars personalizadas para uso em *Aparências -> Widgets* e no f
 | `$after_title`   | *bool*   | Padrão: &lt;/h6>                                     | ✘           |
 
 Somente o parâmetro **name é obrigatório**.
+
+---
 
 ## Exemplo de Uso
 

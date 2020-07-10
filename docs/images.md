@@ -4,13 +4,13 @@ title: Customização das Thumbnails
 sidebar_label: Imagens
 ---
 
-Para registrar imagens/thumbnails com tamanhos personalizados.
+Utilize `./core/config/images.php` para registrar imagens/thumbnails com tamanhos personalizados.
 
 | Param     | Tipo         | Descrição         | Obrigatório |
 |-----------|--------------|-------------------|-------------|
 | `$width`  | *int*        | Largura da Imagem | ✔           |
 | `$height` | *int*        | Altura da Imagem  | ✘           |
-| `$crop`   | *bool|array* | Crop da Imagem    | ✘           |
+| `$crop`   | *bool/array* | Crop da Imagem    | ✘           |
 
 ```php
 return [

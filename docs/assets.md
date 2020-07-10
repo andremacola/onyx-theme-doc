@@ -4,7 +4,9 @@ title: Registro de Assets
 sidebar_label: Assets
 ---
 
-Para adicionar Javascripts e Estilos utilize este arquivo. É recomendável gerenciar suas dependencias pelo [Gulp](gulp) e não pelas funções *wp\_enqueue\_* do WordPress
+Para adicionar Javascripts e Estilos utilize este arquivo `./core/config/assets.php`. É recomendável gerenciar suas dependencias pelo [Gulp](gulp) e não pelas funções *wp\_enqueue\_* do WordPress
+
+---
 
 ## Adicionar CSS
 

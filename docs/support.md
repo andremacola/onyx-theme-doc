@@ -4,7 +4,7 @@ title: Recursos de Suporte do Tema
 sidebar_label: Recursos
 ---
 
-Adicionar ou remover recursos do WordPress. Mais informações em [add_theme_support](https://developer.wordpress.org/reference/functions/add_theme_support/).
+Adicionar ou remover recursos do WordPress no arquivo `./core/config/support.php`. Mais informações em [add_theme_support](https://developer.wordpress.org/reference/functions/add_theme_support/).
 
 ```php
 return [
