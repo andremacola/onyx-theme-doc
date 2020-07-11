@@ -4,4 +4,19 @@ title: \Onyx\Sidebar
 sidebar_label: Sidebar
 ---
 
-Em desenvolvimento...
+## Propriedades
+
+| Variável | Tipo    | Descrição             |
+|----------|---------|-----------------------|
+| $name    | *array* | Nome da Sidebar       |
+| $args    | *array* | Argumentos da Sidebar |
+
+---
+
+## Métodos
+
+### __construct()
+### name()
+### args()
+### create_sidebar()
+### register()
