@@ -50,8 +50,8 @@ module.exports = {
       collapsed: false,
       items: [
         'controllers',
-        'views',
         'rest',
+        'views',
         'helpers',
       ],
     },

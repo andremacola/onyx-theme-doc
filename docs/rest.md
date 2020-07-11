@@ -1,7 +1,7 @@
 ---
 id: rest
-title: API Rest
-sidebar_label: API Rest
+title: API Rest Controllers
+sidebar_label: API Rest Controllers
 ---
 
 Em desenvolvimento...
