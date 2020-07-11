@@ -79,6 +79,25 @@ $this->support  = O::load( 'support' );
 $this->cpts     = O::load( 'cpts' );
 $this->taxs     = O::load( 'taxonomies' );
 ```
+---
+
+### `O::set_hierarchy()`
+
+*Setar hierarquia de templates carregados no boot*
+
+`O::set_hierarchy( $hierarchy = [] )`
+
+---
+
+### `O::get_hierarchy()`
+
+*Capturar hierarquia de templates carregados no boot*  
+*Coloque o sufixo `-controller` no nome do arquivo para pegar o arquivo do controller*
+
+```php
+// Exemplo de uso
+var_dump( O::get_hierarchy() );
+```
 
 ---
 
@@ -185,7 +204,7 @@ Para utilizar a constante ***ONIX_STATIC*** você precisará configurar um cdn o
 :::
 
 :::caution
-Prefira utilize o método [`O::static_path()`](#static_path)  
+Prefira utilizar o método [`O::static_path()`](#static_path)  
 Utilize este método caso queira personalizar o retorno em uma função própria. Para mais informações veja a declaração do método *static_path()* no arquivo [`class-onyx-helpers.php`](https://github.com/andremacola/onyx-theme/blob/8d1633d9b6b0814ce9ead8a8fd0deb8c138ffe57/core/app/class-onyx-helpers.php#L103)
 :::
 

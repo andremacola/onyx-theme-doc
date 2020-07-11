@@ -22,4 +22,6 @@ sidebar_label: Controller
 ### get_post()
 ### get_posts()
 ### set_page_templates()
+### set_archive_templates
+### set_date_templates
 ### set_taxonomy_templates()
