@@ -10,7 +10,7 @@ O *Onyx* provê a possibilidade de criação de Post Types personalizados que po
 
 ## Parâmetros
 
-O único parâmetro obrigatório é o `name(s)` do post type podendo ser uma *string* como podemos ver no [*Exemplo 1*](criando-post-types) ou um *array* como no [*Exemplo 2*](criando-post-types). O Onyx vai extrair automaticamente `slug`, `labels`, `options` caso não sejam fornecidos assim como tentará aplicar o *plural* nas labels necessárias.
+O único parâmetro obrigatório é o `name(s)` do post type podendo ser uma *string* como podemos ver no [*Exemplo 1*](#criando-post-types) ou um *array* como no [*Exemplo 2*](#criando-post-types). O Onyx vai extrair automaticamente `slug`, `labels`, `options` caso não sejam fornecidos assim como tentará aplicar o *plural* nas labels necessárias.
 
 :::caution
 Caso **não fornecido**, o parâmetro `slug` será utilizado para criação do post type e é ele que deverá ser utilizado para queries e relacionamentos. Por padrão o `slug` é extraído do valor `name` transformado para o plural.
@@ -39,19 +39,19 @@ Ao adicionar parâmetros como `labels` ou `options`, você não precisa incluir 
 
 ## Criando Post Types
 
-Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Cpt()`](class-cpt).
+Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Cpt()`](instanciando-um-post-type).
 
 ```php
   /*
   |--------------------------------------------------------------------------
-  | My First Post Type (exemplo 1)
+  | My First Post Type (example 1)
   |--------------------------------------------------------------------------
   */
   [ 'My First CPT' ],
 
   /*
   |--------------------------------------------------------------------------
-  | My Second Post Type (exemplo 2)
+  | My Second Post Type (example 2)
   |--------------------------------------------------------------------------
   */
   [
@@ -70,7 +70,6 @@ Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Cpt(
       // https://developer.wordpress.org/reference/functions/register_post_type/
     ],
   ],
-
 ```
 
 ---
@@ -239,5 +238,6 @@ somente o parâmetro **`name(s)`** é obrigatório, podentro ser uma *string* ou
     'Title',
   ]);
 
+  // register post type
   $cpt->register();
 ```
