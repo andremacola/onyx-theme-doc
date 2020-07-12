@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[29],{128:function(o){o.exports=JSON.parse('{"sobre":{"allTagsPath":"/onyx-theme-doc/blog/tags","slug":"sobre","name":"sobre","count":1,"permalink":"/onyx-theme-doc/blog/tags/sobre"},"onyx":{"allTagsPath":"/onyx-theme-doc/blog/tags","slug":"onyx","name":"onyx","count":1,"permalink":"/onyx-theme-doc/blog/tags/onyx"}}')}}]);
