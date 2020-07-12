@@ -10,6 +10,15 @@ module.exports = {
     // prism: {
     //   theme: require('prism-react-renderer/themes/dracula'),
     // },
+    // algolia: {
+    //   apiKey: 'api-key',
+    //   indexName: 'index-name',
+    //   appId: 'app-id', // Optional, if you run the DocSearch crawler on your own
+    //   algoliaOptions: {}, // Optional, if provided by Algolia
+    // },
+    googleAnalytics: {
+      trackingID: 'UA-3903040-3',
+    },
     image: 'img/ogimage.png',
     navbar: {
       title: 'Onyx Theme',
