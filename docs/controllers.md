@@ -29,6 +29,8 @@ Por padrão o tema vem com os seguintes controllers:
 **Composer** deverá ser atualizado a cada criação de um arquivo novo ou renomeação de classes com o comando **`composer dump-autoload -o`**.
 :::
 
+---
+
 ## Nomeação de arquivos
 
 Segue uma tabela com exemplos de nomeação dos controllers carregados em ordem.
@@ -90,6 +92,8 @@ class Home_Controller extends Controller  {
 }
 ```
 
+---
+
 ## Setando as Views (Templates)
 
 Existem 3 maneiras básicas de se chamar as views. Todos os arquivos obrigatoriamente devem ficar na pasta `./views/`.
@@ -149,6 +153,8 @@ class Page_Product_Controller extends Controller  {
   }
 }
 ```
+
+---
 
 ## Contexto: Queries e Consultas
 
