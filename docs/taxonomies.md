@@ -4,11 +4,6 @@ title: Taxonomias Personalizadas
 sidebar_label: Taxonomias
 ---
 
-Em desenvolvimento...
-
-
----
-
 ## Parâmetros
 
 O `name(s)` da taxonomia podendo ser uma *string* como podemos ver no [*Exemplo 1*](#criando-uma-taxonomia) ou um *array* como no [*Exemplo 2*](#criando-uma-taxonomia). O Onyx vai extrair automaticamente `slug`, `labels`, `options` caso não sejam fornecidos assim como tentará aplicar o *plural* nas labels necessárias.

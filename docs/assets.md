@@ -14,7 +14,7 @@ O *Array* de estilos carrega na ordem adicionada e recebe 2 (dois) parâmetros:
 
 | Param   | Tipo     | Descrição                | Obrigatório |
 |---------|----------|--------------------------|-------------|
-| `$css`  | *string* | Caminho do css           | ✔           |
+| `$css`  | *string* | Caminho ou URL do css    | ✔           |
 | `$home` | *bool*   | Aparecer somente na Home | ✘           |
 
 ```php {9}
@@ -27,6 +27,7 @@ O *Array* de estilos carrega na ordem adicionada e recebe 2 (dois) parâmetros:
   [ 'assets/css/main.css' ],
   [ 'assets/css/home.css', true ],
   [ 'assets/css/myCustomStyle.css'],
+  [ 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css' ],
 ],
 ```
 
@@ -36,10 +37,10 @@ O *Array* de estilos carrega na ordem adicionada e recebe 2 (dois) parâmetros:
 
 O *Array* de javascript carrega na ordem adicionada e recebe 2 (dois) parâmetros:
 
-| Param   | Tipo     | Descrição                | Obrigatório |
-|---------|----------|--------------------------|-------------|
-| `$js`   | *string* | Caminho do javascript    | ✔           |
-| `$home` | *bool*   | Aparecer somente na Home | ✘           |
+| Param   | Tipo     | Descrição                    | Obrigatório |
+|---------|----------|------------------------------|-------------|
+| `$js`   | *string* | Caminho ou URL do javascript | ✔           |
+| `$home` | *bool*   | Aparecer somente na Home     | ✘           |
 
 ```php {9}
 /*
@@ -48,6 +49,7 @@ O *Array* de javascript carrega na ordem adicionada e recebe 2 (dois) parâmetro
 |--------------------------------------------------------------------------
 */
 'js'  => [
+  [ 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js' ],
   [ 'assets/js/app.min.js' ],
   [ 'assets/js/home.min.js', true ],
   [ 'assets/js/myCustomScript.js'],

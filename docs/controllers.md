@@ -202,11 +202,11 @@ class Archive_Product_Controller extends Controller  {
     $this->render_view();
   }
 
-	/**
-	 * Pegar produtos em destaque
-	 *
-	 * @return object
-	 */
+  /**
+   * Pegar produtos em destaque
+   *
+   * @return object
+  */
   protected function get_featured_products() {
     return new PostQuery([
       'post_type'      => 'products',
@@ -215,11 +215,11 @@ class Archive_Product_Controller extends Controller  {
     ]);
   }
 
-	/**
-	 * Pegar produtos em promocão
-	 *
-	 * @return object
-	 */
+  /**
+   * Pegar produtos em promocão
+   *
+   * @return object
+  */
   protected function get_promotions_products() {
     return new PostQuery([
       'post_type'      => 'products',

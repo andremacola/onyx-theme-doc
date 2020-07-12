@@ -67,7 +67,7 @@ Você também pode adicionar filtros ou actions utilizando uma função anônima
   'remove' => [
     ...
     ['the_content', function($param1) {
-      return $param1.$param2;
+      return $param1;
     }, 10],
   ]
 ],
