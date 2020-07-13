@@ -6,7 +6,14 @@ sidebar_label: Helpers
 
 O [Onyx Theme](https://github.com/andremacola/onyx-theme) é munido de diversas funções de ajuda para o desenvolvimento do projeto.
 
-Essas funções são métodos estáticos da classe `\Onyx\O`.
+Essas funções são métodos estáticos da classe `\Onyx\Helpers` que tem como alias `\Onyx\O`.
+
+:::info
+Para resolver problemas com o intelisense, sempre utilize o alias `O` para a classe Helpers.
+```php
+use Onyx\Helpers as O;
+```
+:::
 
 ```php
 // Exemplo
@@ -39,7 +46,7 @@ Verifique os arquivos para retornar.
 // Exemplos de uso
 
 namespace Onyx;
-O::conf('app')                    // Todos os parâmetro do arquivo ./conf/app.php
+O::conf('app')                    // Todos os parâmetro do arquivo ./core/config/app.php
 O::conf('app')->version;          // 1.0
 O::conf('app')->dir_uri;          // http://site.onyx.local/app/themes/onyx
 O::conf('app')->desc;             // My Site Description
@@ -195,7 +202,7 @@ O::static_path( 'assets/css/home.css' ) // http://site.onyx.local/app/themes/ony
 ### `O::static_uri()`
 
 *Retorna o diretório dos `assets` de acordo com a constante de ambiente `ONYX_STATIC`*  
-*(definida no parâmetro `static` em `./conf/app.php`).*
+*(definida no parâmetro `static` em `./core/config/app.php`).*
 
 *O padrão do subdomínio será: `//{$subdomain}.domain.tld/THEME_FOLDER/assets`*
 

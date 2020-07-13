@@ -6,7 +6,7 @@ sidebar_label: Controllers
 
 ## Introdução
 
-Seguindo o padrão de ***Hierarquia de templates*** do próprio WordPress que [pode ser vista aqui](https://wphierarchy.com/), o Onyx Theme carrega seus controllers de acordo com a existencia desses arquivos seguido do *sufixo* `-controller` dentro da pasta `./app/controllers`.
+Seguindo o padrão de ***Hierarquia de templates*** do próprio WordPress que [pode ser vista aqui](https://wphierarchy.com/), o Onyx Theme carrega seus controllers de acordo com a existencia desses arquivos seguido do *sufixo* `Controller` dentro da pasta `./core/app/Controllers`.
 
 Os controllers são responsáveis por fazer a consulta/queries no banco e carregar as [Views](views). Você pode ver os **exemplos práticos** nos controllers que acompanham o tema.
 
@@ -14,20 +14,16 @@ Os controllers são responsáveis por fazer a consulta/queries no banco e carreg
 A não existência de nenhum controller em cima da **hierarquia**, os templates padrões do WordPress são carregados normalmente.
 :::
 
-Por padrão o tema vem com os seguintes controllers: 
+Por padrão o tema vem com os seguintes controllers no padrão **PSR4**: 
 
-- ./app/controller/
-  - **archive-controller.php**  
-  - **category-controller.php**  
-  - **error404-controller.php**: <sup>**Exclusivamente o controller do 404 foge do padrão**</sup>
-  - **home-controller.php**  
-  - **page-controller.php**  
-  - **search-controller.php**  
-  - **single-controller.php**  
-
-:::note
-**Composer** deverá ser atualizado a cada criação de um arquivo novo ou renomeação de classes com o comando **`composer dump-autoload -o`**.
-:::
+- ./core/app/Controllers/
+  - **ArchiveController.php**  
+  - **CategoryController.php**  
+  - **Error404Controller.php**: <sup>**Exclusivamente o controller do 404 foge do padrão**</sup>
+  - **HomeController.php**  
+  - **PageController.php**  
+  - **SearchController.php**  
+  - **SingleController.php**  
 
 ---
 
@@ -35,50 +31,54 @@ Por padrão o tema vem com os seguintes controllers:
 
 Segue uma tabela com exemplos de nomeação dos controllers carregados em ordem.
 
-| Tipo       | Arquivos                                                                                                                                                    |
-|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Home       | `home-controller.php` <br /> `index-controller.php`                                                                                                         |
-| Single     | `single-{$post_type}-{$slug}-controller.php` <br /> `single-{$post_type}-controller.php` <br /> `single-controller.php`                                     |
-| Pages      | `page-{$slug}-controller.php` <br /> `page-{$id}-controller.php` <br /> `page-controller.php`                                                               |
-| Categories | `category-{$slug}-controller.php` <br /> `category-{$id}-controller.php` <br /> `category-controller.php`                                                   |
-| Tags       | `tag-{$slug}-controller.php` <br /> `tag-{$id}-controller.php` <br /> `tag-controller.php` <br /> `tag-controller.php`                                      |
-| Taxonomies | `taxonomy-{$taxonomy}-{$term}-controller.php` <br /> `taxonomy-{$taxonomy}-controller.php` <br /> `taxonomy-controller.php` <br /> `archive-controller.php` |
-| Author     | `author-{$author}-controller.php` <br /> `author-{$id}-controller.php` <br /> `author-controller.php` <br /> `archive-controller.php`                       |
-| CPT        | `archive-{$post_type}-controller.php` <br /> `archive-controller.php` <br /> `index-controller.php`                                                         |
+Os arquivos dos controllers são baseados nos templates da hierarquia do WordPress e transformados de acordo com o [PSR4](https://www.php-fig.org/psr/psr-4/).
+
+| Tipo       | Arquivos                                                                                                                                             |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Home       | `HomeController.php` <br /> `IndexController.php`                                                                                                    |
+| Single     | `Single{$PostType}{$Slug}Controller.php` <br /> `Single{$PostType}Controller.php` <br /> `SingleController.php`                                      |
+| Pages      | `Page{$Slug}Controller.php` <br /> `Page{$ID}Controller.php` <br /> `PageController.php`                                                             |
+| Categories | `Category{$Slug}Controller.php` <br /> `Category{$ID}Controller.php` <br /> `CategoryController.php` <br /> `ArchiveController.php`                  |
+| Tags       | `Tag{$Slug}Controller.php` <br /> `Tag{$ID}Controller.php` <br /> `TagController.php` <br /> `TagController.php` <br /> `ArchiveController.php`      |
+| Taxonomies | `Taxonomy{$taxonomy}{$term}Controller.php` <br /> `Taxonomy{$taxonomy}Controller.php` <br /> `TaxonomyController.php` <br /> `ArchiveController.php` |
+| Author     | `Author{$Author}Controller.php` <br /> `Author{$ID}Controller.php` <br /> `AuthorController.php` <br /> `ArchiveController.php`                      |
+| CPT        | `Archive{$PostType}Controller.php` <br /> `ArchiveController.php` <br /> `IndexController.php`                                                       |
 
 :::note
 **Dica:** Você poderá utilizar um **[`var_dump( O::get_hierarchy() );`](helpers/#oget_hierarchy)** para verificar os templates da página atual.
 :::
 
-Para mais informações sobre o funcionamento do padrão de hierarquia do WordPress visite [page-template-files](https://developer.wordpress.org/themes/template-files-section/page-template-files/) e [wphierarchy](https://wphierarchy.com/).
+Para mais informações sobre o funcionamento do padrão de hierarquia do WordPress visite [Page-template-files](https://developer.wordpress.org/themes/template-files-section/Page-template-files/) e [wphierarchy](https://wphierarchy.com/).
 
 ---
 
 ## Nomeação das classes
 
-As classes dos controllers são nomeadas de acordo com o [WordPress PHP Coding Standards](https://developer.wordpress.org/coding-standards/inline-documentation-standards/php/#2-classes) relacionadas aos arquivos de controllers carregados.
+As classes dos controllers são nomeadas de acordo com o [PSR4](https://www.php-fig.org/psr/psr-4/) relacionadas aos arquivos de controllers carregados.
 
 Segue uma tabela com exemplos de nomeação das classes.
 
-| Arquivo                     | Classe                 |
-|-----------------------------|------------------------|
-| home-controller.php         | Home_Controller        |
-| single-controller.php       | Single_Controller      |
-| single-post-controller.php  | Single_Post_Controller |
-| page-controller.php         | Page_Controller        |
-| page-{$slug}-controller.php | Page_{Slug}_Controller |
-| category-controller.php     | Category_Controller    |
+| Arquivo                   | Classe               |
+|---------------------------|----------------------|
+| HomeController.php        | HomeController       |
+| SingleController.php      | SingleController     |
+| SinglePostController.php  | SinglePostController |
+| PageController.php        | PageController       |
+| Page{$Slug}Controller.php | Page{Slug}Controller |
+| CategoryController.php    | CategoryController   |
 
 ---
 
 ## Instanciando um controller
 
-Todos os controllers devem extender a classe principal `\Onyx\Controllers\Controller` e executar seu método `__construct()`.
+Todos os controllers devem extender a classe principal `\Onyx\Controller` e executar seu método `__construct()`.
 
 ```php
 namespace Onyx\Controllers;
 
-class Home_Controller extends Controller  {
+use Onyx\Controller;
+
+class HomeController extends Controller  {
   public function __construct() {
     parent::__construct();
 
@@ -103,7 +103,9 @@ Os templates são carregados por ordem de existência na hierarquia.
 ```php
 namespace Onyx\Controllers;
 
-class Page_Product_Controller extends Controller  {
+use Onyx\Controller;
+
+class PageProductController extends Controller  {
   public function __construct() {
     parent::__construct();
 
@@ -170,9 +172,11 @@ Para saber como utilizar o ***Twig***, visite a documentação do [Timber](https
 
 ```php
 namespace Onyx\Controllers;
+
+use Onyx\Controller;
 use Timber\PostQuery;
 
-class Archive_Product_Controller extends Controller  {
+class ArchiveProductController extends Controller  {
   public function __construct() {
     parent::__construct();
     /*

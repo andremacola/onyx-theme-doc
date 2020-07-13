@@ -13,11 +13,12 @@ Todos as queries e templates **são gerenciados** pelos `controllers`/`timber` q
 ## Estrutura de Pastas
 
 - **`core/`** - <sup>É onde reside toda a estrutura principal do tema</sup>
-  - `./api` - <sup>Coloque todos os seus controllers/classes de integração com a REST API do WP aqui.</sup>
-  - `./app` - <sup>Classes do Onyx Theme, não altere nada.</sup>
+  - `./app` - <sup>Classes para funcionamento do tema</sup>
+    - `./Api` - <sup>Controllers dos endpoints da WP REST API</sup>
+    - `./Controllers` - <sup>Controllers das requisições</sup>
+    - `./Onyx` - <sup>Classes do Onyx</sup>
   - `./config` - <sup>Reside todas as principais configurações de funcionamento do seu projeto.</sup>
-  - `./controllers` - <sup>Controladores de requisição das páginas e relacionamento com os templates do Twig</sup>
-  - `./includes` - <sup>Suas classes e funções próprias.</sup>
+  - `./includes` - <sup>Suas funções e classes próprias.</sup>
   - `./lang` - <sup>Traduções</sup>
 
 - **`src/`** - <sup>Arquivos fontes para estilos e javascripts.</sup>

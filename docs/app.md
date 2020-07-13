@@ -4,8 +4,6 @@ title: Configurações do APP
 sidebar_label: App
 ---
 
-Primeiro renomeie o arquivo `./core/config/app.example.php` para `app.php`.
-
 Este arquivo contém configurações básicas para o funcionamento e setup do tema.
 
  - `version`: Versão do seu tema. Geralmente utilizada para parametros de JS/CSS

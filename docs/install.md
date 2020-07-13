@@ -30,11 +30,9 @@ Verifique se todas as dependências foram instaladas antes de prosseguir:
 composer install
 yarn install
 ```
-
-***3 |*** Renomeie o arquivo da pasta `core/conf/app.example.php` para `core/conf/app.php` e atualize as informações caso necessário  
-***4 |*** Renomeie o arquivo da pasta `.env.example` para `.env` e atualize as informações de desenvolvimento local caso necessário  
-***5 |*** Ative o tema em seu painel do WordPress  
-***6 |*** Inicie o desenvolvimento rodando o comando abaixo:  
+***3 |*** Renomeie o arquivo da pasta `.env.example` para `.env` e atualize as informações de desenvolvimento local caso necessário  
+***4 |*** Ative o tema em seu painel do WordPress  
+***5 |*** Inicie o desenvolvimento rodando o comando abaixo:  
 
 ```bash
 yarn serve
