@@ -33,6 +33,11 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
+        {
+          href: 'https://timber.github.io/docs/v2',
+          label: 'Timber',
+          position: 'left',
+        },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/andremacola/onyx-theme',

@@ -53,6 +53,7 @@ module.exports = {
         'rest',
         'views',
         'helpers',
+        'routes',
       ],
     },
 

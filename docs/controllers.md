@@ -71,7 +71,7 @@ Segue uma tabela com exemplos de nomeação das classes.
 
 ## Instanciando um controller
 
-Todos os controllers devem extender a classe principal `\Onyx\Controller` e executar seu método `__construct()`.
+Todos os controllers devem extender a classe principal `\Onyx\Controller` e executar o método `initialize()`.
 
 ```php
 namespace Onyx\Controllers;
@@ -79,22 +79,19 @@ namespace Onyx\Controllers;
 use Onyx\Controller;
 
 class HomeController extends Controller  {
-  public function __construct() {
-    parent::__construct();
 
+  public function initialize() {
     // realizar carregamento de templates
     // realizar carregamento do contexto do Timber
     // carregar métodos desejados
-
-    // renderizar view
-    $this->render_view();
   }
+
 }
 ```
 
 ---
 
-## Setando as Views (Templates)
+## Views: Setando as os Templates
 
 Existem 3 maneiras básicas de se chamar as views. Todos os arquivos obrigatoriamente devem ficar na pasta `./views/`.
 
@@ -106,37 +103,39 @@ namespace Onyx\Controllers;
 use Onyx\Controller;
 
 class PageProductController extends Controller  {
-  public function __construct() {
-    parent::__construct();
+
+  public function initialize() {
 
     /*
     |--------------------------------------------------------------------------
     | Método 1: chamando um dos métodos da classe Controller
     | Neste caso o Onyx carregará as views de acordo com a hierarquia de templates do WordPress
-    | Utilize para casos genéricos, poderá ocorrer \Exception
     | https://developer.wordpress.org/themes/basics/template-hierarchy/
     |--------------------------------------------------------------------------
     */
-    $this->set_page_templates(); /* or */ $this->set_archive_templates();
+    $this->set_page_templates( $prefix = 'default' );                          /* or */
+    $this->set_archive_templates( $prefix = 'archive', $folder = 'pages' );    /* or */
+    $this->set_post_types_templates( $prefix = 'archive', $folder = 'pages' ); /* or */
+    $this->set_taxonomy_templates( $prefix = 'archive', $folder = 'pages' );
 
     /*
     |--------------------------------------------------------------------------
     | Método 2: Setando os templates diretamente na propriedade $templates
+    | com o método `set_templates()`.
     |--------------------------------------------------------------------------
     */
-    $this->templates = [ 'pages/product-index.twig', 'pages/product-home.twig' ];
+    $this->set_templates( [ 'pages/index.twig', 'pages/home.twig' ] );
 
     /*
     |--------------------------------------------------------------------------
-    | Método 3: Criando um método com uma lógica própria
-    | Passando o objeto da página/post
+    | Método 3: Criando um método com uma lógica própria para alterar
+    | a propriedade $templates da classe.
     |--------------------------------------------------------------------------
     */
-    $this->context['post'] = $this->get_post();
-    $this->set_my_own_template_logic( $this->context['post'], 'page' );
+    $post = $this->get_post();
+    $this->set_context( 'post', $this->get_post() ); // Veja mais a seguir
+    $this->set_my_own_template_logic( $post );
 
-    // renderizar view
-    $this->render_view();
   }
 
   /**
@@ -153,6 +152,34 @@ class PageProductController extends Controller  {
       "pages/myTemplate.twig",
     ];
   }
+
+}
+```
+
+---
+
+## Views: Cancelar renderização
+
+Por padrão os Controllers no *Onyx Theme* renderiza automaticamente as views. Caso deseje um controle maior sobre elas, podemos cancelar o método `render_view()` passando um método no `initialize()`.
+
+```php
+namespace Onyx\Controllers;
+
+use Onyx\Controller;
+
+class SingleController extends Controller  {
+
+  public function initialize() {
+		$this->set_page_templates( 'page' );
+		$this->set_context( 'post', $this->get_post() );
+
+    // cancelar renderização
+    $this->no_render();
+
+    // renderizar manualmente
+    Timber::render( $this->templates, $this->context );
+  }
+
 }
 ```
 
@@ -177,8 +204,9 @@ use Onyx\Controller;
 use Timber\PostQuery;
 
 class ArchiveProductController extends Controller  {
-  public function __construct() {
-    parent::__construct();
+
+  public function initialize() {
+
     /*
     |--------------------------------------------------------------------------
     | Escolher templates
@@ -208,8 +236,6 @@ class ArchiveProductController extends Controller  {
     */
     $this->context['promotion_banner'] = get_field('promotion_banner', 'options');
 
-    // renderizar view
-    $this->render_view();
   }
 
   /**
@@ -237,5 +263,10 @@ class ArchiveProductController extends Controller  {
       'posts_per_page' => 10,
     ]);
   }
+
 }
 ```
+
+:::note
+Neste exemplo, não utilizamos os helpers `set_context()`, `set_templates()` ou `set_{type}_templates()` e injetamos os templates e contextos ***diretamente nas propriedades***.
+:::
