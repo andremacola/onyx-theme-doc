@@ -8,6 +8,8 @@ O [Onyx Theme](https://github.com/andremacola/onyx-theme) tem um modo específic
 
 Todos as queries e templates **são gerenciados** pelos `controllers`/`timber` que relacionam com as `views`. Veja mais informações em [Views](views).
 
+Nenhuma dependência além do Timber é requerida. Todo o funcionamento do Onyx se mantém nas **bases originais** do WordPress.
+
 ---
 
 ## Estrutura de Pastas

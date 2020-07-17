@@ -69,7 +69,7 @@ Segue uma tabela com exemplos de nomeação das classes.
 
 ---
 
-## Instanciando um controller
+## Criando um controller
 
 Todos os controllers devem extender a classe principal `\Onyx\Controller` e executar o método `initialize()`.
 

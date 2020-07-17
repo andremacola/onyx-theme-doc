@@ -4,7 +4,7 @@ title: Rotas
 sidebar_label: Rotas
 ---
 
-O Onyx theme não gerencia rotas além dos [Controllers](controllers).
+O Onyx theme não gerencia rotas além dos [Controllers](controllers) e [Rest API Endpoints](rest).
 
 Caso seja de sua necessidade a criação de rotas personalizadas para seu tema ou aplicação, considere utilizar uma das funções e filtros do WordPress:
 
