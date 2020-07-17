@@ -22,4 +22,4 @@ Veja mais infomações sobre os métodos e seus parâmetros na [referência comp
 ### register_routes()
 ### initialize()
 ### route()
-### response()
+### rest_response()
