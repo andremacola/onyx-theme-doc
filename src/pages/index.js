@@ -29,7 +29,7 @@ const features = [
     ),
   },
   {
-    title: <>Cases de sucesso</>,
+    title: <>Cases de Sucesso</>,
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>

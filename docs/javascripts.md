@@ -13,7 +13,7 @@ const myModule = require('module-name');
 ```
 
 Para carregar arquivos externos ou adicionar uma nova tag `<script />`  
-verifique a seção de **Configurações** - [Hooks](hooks) da documentação.
+verifique a seção de **Configurações** - [Assets](assets) da documentação.
 
 ---
 

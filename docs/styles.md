@@ -22,6 +22,6 @@ Veja o exemplo a seguir:
 ```
 
 Para carregar arquivos externos ou adicionar uma nova tag `<link rel='stylesheet' />`  
-verifique a seção de **Configurações** - [Hooks](hooks) da documentação.
+verifique a seção de **Configurações** - [Assets](assets) da documentação.
 
 ---

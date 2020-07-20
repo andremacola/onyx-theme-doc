@@ -62,7 +62,7 @@ module.exports = {
             },
             {
               label: 'Configuração',
-              to: 'docs/doc2/',
+              to: 'docs/app/',
             },
           ],
         },

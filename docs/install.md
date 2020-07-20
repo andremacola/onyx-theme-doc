@@ -30,7 +30,7 @@ Verifique se todas as dependências foram instaladas antes de prosseguir:
 composer install
 yarn install
 ```
-***3 |*** Renomeie o arquivo da pasta `.env.example` para `.env` e atualize as informações de desenvolvimento local caso necessário  
+***3 |*** Renomeie o arquivo `.env.example` para `.env` e atualize as informações de desenvolvimento local caso necessário  
 ***4 |*** Ative o tema em seu painel do WordPress  
 ***5 |*** Inicie o desenvolvimento rodando o comando abaixo:  
 
