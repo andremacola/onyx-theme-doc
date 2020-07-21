@@ -4,7 +4,7 @@ title: \Onyx\Controller
 sidebar_label: Controller
 ---
 
-Veja mais infomações sobre os métodos e seus parâmetros na [referência completa](https://github.com/andremacola/onyx-theme/blob/master/core/app/Onyx/Controller.php)
+Veja mais informações sobre os métodos e seus parâmetros na [referência completa](https://github.com/andremacola/onyx-theme/blob/master/core/app/Onyx/Controller.php)
 
 ---
 
