@@ -16,7 +16,7 @@ Este arquivo contém configurações básicas para o funcionamento e setup do te
  - `desc`: Descrição do site
  - `name`: Nome do site
  - `url`: Url da Home do site
- - `rest`: Prefixo da REST API do WordPress. Padrão *wp-json*
+ - `rest`: Prefixo da REST API do WordPress. Padrão *api* (anteriormente: wp-json)
  - `user`: Retorna o email do usuário logado
  - `devs`: Array com emails de desenvolvedores do projeto. Usado para debug. Veja mais em *[\Onyx\O::is_dev()](helpers#ois_dev)*
  - `uploads`: Controla o limite do tamanho para upload no admin e desabilita tipos de arquivos.

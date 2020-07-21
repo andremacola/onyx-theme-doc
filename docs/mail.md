@@ -6,6 +6,8 @@ sidebar_label: Email
 
 Nunca envie emails sem antes configurar um servidor SMTP. No arquivo `./core/config/mail.php` você registra os parâmetros que a função `wp_mail()` do WordPress irá utilizar. Não há necessidade usar plugins de terceiros salvo em casos de autorização via API.
 
+OBS: Você precisa ativar o hook `[ 'phpmailer_init', 'onyx_smtp_config' ]` dentro dos [Hooks](hooks).
+
 ```php
 return [
   'from'   => 'email@domain.tld',

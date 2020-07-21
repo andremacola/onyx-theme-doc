@@ -99,23 +99,23 @@ Ao registrar uma [Taxonomia](taxonomies) personalizada, você pode também adici
 Você pode **incluir**, **remover** ou **reordenar** colunas personalizadas na tabela de listagem do admin do WordPress ao registrar um Post Type. Isso é bem útil quando você tem *custom fields* ou *taxonomias personalizadas*
 
 :::info
-Para adicionar colunas personalizadas de **taxonomias**, ver registro em [Taxonomia](taxonomies).
+Para adicionar colunas de **taxonomias**, ver registro em [Taxonomia](taxonomies).
 :::
 
 | Param   | Tipo    | Descrição              | Obrigatório |
 |---------|---------|------------------------|-------------|
-| `add`   | *array* | Tabelas para adicionar | ✘           |
-| `order` | *array* | Ordenação das tabelas  | ✘           |
-| `hide`  | *array* | Remover tabelas        | ✘           |
+| `add`   | *array* | Colunas para adicionar | ✘           |
+| `order` | *array* | Ordenação das colunas  | ✘           |
+| `hide`  | *array* | Remover colunas        | ✘           |
 
 ### add
 
-| Param      | Tipo       | Descrição                                          | Obrigatório |
-|------------|------------|----------------------------------------------------|-------------|
-| `label`    | *string*   | Label da tabela                                    | ✔           |
+| Param      | Tipo       | Descrição                                           | Obrigatório |
+|------------|------------|-----------------------------------------------------|-------------|
+| `label`    | *string*   | Label da coluna                                     | ✔           |
 | `populate` | *callable* | Função que recebe 2 valores `fn($column, $post_id)` | ✔           |
-| `sort`     | *string*   | Meta Key para ordenação                            | ✘           |
-| `numeric`  | *bool*     | Ordenar via numeral ou string                      | ✘           |
+| `sort`     | *string*   | Meta Key para ordenação                             | ✘           |
+| `numeric`  | *bool*     | Ordenar via numeral ou string                       | ✘           |
 
 ### order
 

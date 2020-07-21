@@ -33,7 +33,7 @@ Ao adicionar parâmetros como `labels` ou `options`, você não precisa incluir 
 
 ## Criando uma Taxonomia
 
-Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Taxonomy()`](instanciando-uma-taxonomia).
+Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Taxonomy()`](#instanciando-uma-taxonomia).
 
 ```php
   /*
