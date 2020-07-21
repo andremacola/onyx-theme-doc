@@ -91,7 +91,7 @@ class HomeController extends Controller  {
 
 ---
 
-## Views: Setando as os Templates
+## Views: Setando os Templates
 
 Existem 3 maneiras básicas de se chamar as views. Todos os arquivos obrigatoriamente devem ficar na pasta `./views/`.
 
@@ -194,7 +194,7 @@ Você pode passar uma ou várias queries/consultas para o contexto caso necessá
 Além das queries, você pode passar qualquer tipo de informação junto com o `contexto` para o *Timber*. Como um campo personalizado com alguma informação importante.
 
 :::info
-Para saber como utilizar o ***Twig***, visite a documentação do [Timber](https://timber.github.io/docs/v2/getting-started/a-post-archive/) ou do [Twig](https://twig.symfony.com/). E veja os exemplos que acompanham o **Onyx Theme**
+Para saber como utilizar o ***Twig***, visite a documentação do [Timber](https://timber.github.io/docs/v2/getting-started/a-post-archive/) ou do [Twig](https://twig.symfony.com/) e veja os exemplos que acompanham o **Onyx Theme**
 :::
 
 ```php
@@ -268,5 +268,5 @@ class ArchiveProductController extends Controller  {
 ```
 
 :::note
-Neste exemplo, não utilizamos os helpers `set_context()`, `set_templates()` ou `set_{type}_templates()` e injetamos os templates e contextos ***diretamente nas propriedades***.
+Neste exemplo, não utilizamos os helpers `set_context()`, `set_templates()` ou `set_{type}_templates()`. Injetamos os templates e contextos ***diretamente na propriedade $templates***.
 :::
