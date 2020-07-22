@@ -48,7 +48,7 @@ return [
 
 ## Criando um REST API Controller
 
-Neste exemplo criaremos o endpoint `/wp-json/onyx/v1/example` com os métodos POST e GET.
+Neste exemplo criaremos o endpoint `/(api|wp-json)/onyx/v1/example` com os métodos POST e GET.
 
 ```php
 namespace Onyx\Controllers;
@@ -106,8 +106,8 @@ class ExampleRestController extends RestController {
 | `$method`   | *WP_Rest_Server/mixed* | (GET, POST, PUT, PATCH, DELETE)             | ✔           |
 | `$route`    | *string*               | O Endpoint da rota                          | ✔           |
 | `$callback` | *callable*             | Método do controller callback para executar | ✔           |
-| `$options`  | *array*                | Opções do endpoint                          | ✔           |
-| `$override` | *bool*                 | Substituir rota existente. Padrão: falso    | ✔           |
+| `$options`  | *array*                | Opções do endpoint                          | ✘           |
+| `$override` | *bool*                 | Substituir rota existente. Padrão: falso    | ✘           |
 
 `@return bool`  
 `@throws \Exception` Se não existir [`$namespace`](#parâmetros-e-métodos)
