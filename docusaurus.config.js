@@ -39,7 +39,7 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/andremacola/onyx-theme/en/',
+          href: 'https://andremacola.github.io/onyx-theme-doc/en/',
           label: 'English',
           position: 'right',
         },
