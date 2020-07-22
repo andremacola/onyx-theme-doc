@@ -33,7 +33,7 @@ use Onyx\Helpers as O;
 
 |Param | Tipo | Descrição                       | Obrigatório
 |------|------|---------------------------------|------------|
-| `$name` | *string* | Arquivo de configuração* | ✘          |
+| `$name` | *string* | Arquivo de configuração  | ✘          |
 
 `@return object|false`
 
@@ -65,7 +65,7 @@ O::conf('hooks')->filters['add']; // Objeto|Array dos filtros adicionados
 
 | Param   | Tipo      | Descrição            | Obrigatório |
 |---------|-----------|----------------------|-------------|
-| `$file` | *string*  | Nome do Arquivo*     | ✔           |
+| `$file` | *string*  | Nome do Arquivo     | ✔            |
 | `$obj`  | *boolean* | Retornar como objeto | ✘           |
 
 `@return array|object|false`
@@ -99,7 +99,7 @@ $this->taxs     = O::load( 'taxonomies' );
 ### `O::get_hierarchy()`
 
 *Capturar hierarquia de templates carregados no boot*  
-*Coloque o sufixo `-controller` no nome do arquivo para pegar o arquivo do controller*
+*Coloque o sufixo `Controller` no nome do arquivo para pegar o arquivo do controller*
 
 ```php
 // Exemplo de uso
@@ -212,7 +212,7 @@ Para utilizar a constante ***ONIX_STATIC*** você precisará configurar um cdn o
 
 :::caution
 Prefira utilizar o método [`O::static_path()`](#static_path)  
-Utilize este método caso queira personalizar o retorno em uma função própria. Para mais informações veja a declaração do método *static_path()* no arquivo [`class-onyx-helpers.php`](https://github.com/andremacola/onyx-theme/blob/8d1633d9b6b0814ce9ead8a8fd0deb8c138ffe57/core/app/class-onyx-helpers.php#L103)
+Utilize este método caso queira personalizar o retorno em uma função própria. Para mais informações veja a declaração do método *static_path()* no arquivo [`Helpers.php`](https://github.com/andremacola/onyx-theme/blob/18c7d6f55f530d6bd379f025b1dcb28a5da3ad5e/core/app/Onyx/Helpers.php#L130)
 :::
 
 ```php
@@ -263,7 +263,7 @@ $img = O::get_img( 'assets/images/logo.jpg' );
 
 | Param   | Tipo     | Descrição                | Obrigatório |
 |---------|----------|--------------------------|-------------|
-| `$css`  | *string* | Caminho do css           | ✔           |
+| `$css`  | *string* | Caminho ou URL do css    | ✔           |
 | `$home` | *bool*   | Aparecer somente na Home | ✘           |
 
 `@echo string`
@@ -285,7 +285,7 @@ $img = O::get_img( 'assets/images/logo.jpg' );
 
 | Param   | Tipo     | Descrição                | Obrigatório |
 |---------|----------|--------------------------|-------------|
-| `$js`   | *string* | Caminho do js            | ✔           |
+| `$js`   | *string* | Caminho ou URL do js     | ✔           |
 | `$home` | *bool*   | Aparecer somente na Home | ✘           |
 
 `@echo string`
@@ -312,7 +312,7 @@ $img = O::get_img( 'assets/images/logo.jpg' );
 ### `O::gtag()`
 
 *Adicionar html do script do google analytics (método principal)*  
-*Utiliza `gtag.js` to Google*
+*Utiliza `gtag.js` do Google*
 
 `O::gtag( $uax, $script = false )`
 
@@ -335,7 +335,7 @@ $img = O::get_img( 'assets/images/logo.jpg' );
 ### `O::analytics()`
 
 *Adicionar html do script do google analytics (legado)*  
-*Utiliza `analytics.js` to Google*
+*Utiliza `analytics.js` do Google*
 
 `O::gtag( $uax, $script = false )`
 
