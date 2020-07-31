@@ -30,11 +30,10 @@ sidebar_label: Setup
  ### register_image_sizes()
  ### manage_actions()
  ### manage_filters()
- ### key (add|remove - action|filter) [require
  ### register_hooks()
- ### and priority [require
  ### get_hook_params()
  ### register_theme_support()
+ ### load_tests_if_exist()
  ### version()
  ### define()
  ### show()
