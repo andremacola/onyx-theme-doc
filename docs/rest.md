@@ -18,14 +18,12 @@ Todas os controllers para a REST API são criados dentro da pasta `./core/app/Ap
 
 ## Registrando
 
-Após a criação do controller, é necessário registrá-lo em `./core/config/rest.php` como no exemplo abaixo.
+Após a criação do controller, é necessário registrá-lo em `./core/config/app.php` como no exemplo abaixo.
 
 ```php
-namespace Onyx\Controllers;
-
 return [
-  ExampleRestController::class,
-  MyOtherRestController::class,
+  \Onyx\Controllers\ExampleRestController::class,
+  \Onyx\Controllers\MyOtherRestController::class,
 ];
 ```
 

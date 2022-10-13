@@ -4,7 +4,7 @@ title: Registro de Sidebars
 sidebar_label: Sidebars
 ---
 
-Criação de Sidebars personalizadas para uso em *Aparências -> Widgets* e no front-end em `./core/config/sidebars.php`
+Criação de [Sidebars](https://developer.wordpress.org/themes/functionality/sidebars/) personalizadas para uso em *Aparências -> Widgets* e no front-end em `./core/config/sidebars.php`
 
 ---
 

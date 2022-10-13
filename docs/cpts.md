@@ -39,7 +39,7 @@ Ao adicionar parâmetros como `labels` ou `options`, você não precisa incluir 
 
 ## Criando Post Types
 
-Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Cpt()`](instanciando-um-post-type).
+Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Cpt()`](cpts#instanciando-um-post-type).
 
 ```php
   /*
@@ -58,7 +58,7 @@ Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Cpt(
     'names'   => [
       'name'   => 'Product',   // required
       'plural' => 'Products' , // optional
-      'slug'   => 'produtct' , // optional
+      'slug'   => 'products' , // optional
     ],
     'icon' => 'dashicons-admin-post',
     'labels'  => [
@@ -179,13 +179,103 @@ function get_meta_field_2($column, $post_id) {
 
 ---
 
+## Regras de Capacidades
+
+Ao criar um post type, você poderá definir [capacidades](https://developer.wordpress.org/reference/functions/register_post_type/#capability_type) personalizadas caso necessário.
+
+### capability_type
+
+O atributo `capability_type` cria automaticamente as capacidades primitivas do WordPress baseadas no valor passado *(edit_MYCPT, edit_others_MYCPT, delete_MYCPT, publish_MYCPT, read_private_MYCPT)*
+
+```php
+  /*
+  |--------------------------------------------------------------------------
+  | My Custom Cap CPT
+  |--------------------------------------------------------------------------
+  */
+  [
+    'names'   => [
+      'name'   => 'Cap',
+      'plural' => 'Caps' ,
+      'slug'   => 'caps' ,
+    ],
+    'icon' => 'dashicons-admin-post',
+    'options' => [
+      'capability_type' => 'cap'
+    ],
+  ],
+```
+
+Este exemplo irá setar:
+
+- *`edit_post` como* ***`edit_cap`***
+- *`read_post` como* ***`read_cap`***
+- *`delete_post` como* ***`delete_cap`***
+- *`edit_posts` como* ***`edit_caps`***
+- *`edit_others_posts` como* ***`edit_others_caps`***
+- *`delete_posts` como* ***`delete_caps`***
+- *`publish_posts` como* ***`publish_caps`***
+- *`read_private_posts` como* ***`read_private_caps`***
+- *`create_posts` como* ***`edit_caps`***
+
+### custom_caps
+
+O atributo `custom_caps` adiciona automaticamente todas as capacidades primitivas ***extras*** do WordPress baseadas no valor passado. Ao usar `custom_caps`, não é necessário passar o parâmetro `capability_type`. O Onyx theme usará o `name` do Post Type para gerar as capacidades.
+
+```php
+  /*
+  |--------------------------------------------------------------------------
+  | My Advanced Custom Cap CPT
+  |--------------------------------------------------------------------------
+  */
+  [
+    'names'   => [
+      'name'   => 'Product',
+      'plural' => 'Products' ,
+      'slug'   => 'products' ,
+    ],
+    'icon' => 'dashicons-admin-post',
+    'options' => [
+      'custom_caps' => true
+    ],
+  ],
+```
+
+Este exemplo irá setar regras mais completas:
+
+- `edit_product`
+- `read_product`
+- `delete_product`
+- `edit_products`
+- `edit_others_products`
+- `publish_products`
+- `read_private_products`
+- `create_products`
+- `read_products`
+- `delete_products`
+- `delete_private_products`
+- `delete_published_products`
+- `delete_others_products`
+- `edit_private_products`
+- `edit_published_products`
+
+:::info
+Se você precisar de regras mais personalizadas, utilize o atributo [***capabilities***](https://developer.wordpress.org/reference/functions/register_post_type/#capabilities) padrão do WordPress e determine manualmente todas as capacidades necessárias.
+:::
+
+---
+
 ## Instanciando um Post Type
 
 Além de poder criar um Post Type utilizando o registro no arquivo `./core/config/cpts.php`, você pode instanciar um objeto e criar manualmente seu CPT usando a classe [`\Onyx\Cpt`](class-cpt)
 
+Caso esteja extendendo a classe `\Onyx\Cpt` você ainda pode utilizar os métodos [`add_action`](class-cpt#add_action) e [`add_filter`](class-cpt#add_filter) personalizados para criar hooks do wordpress dentro de seu objeto mais facilmente.
+
 :::info
 somente o parâmetro **`name(s)`** é obrigatório, podentro ser uma *string* ou um *array*.
 :::
+
+### Criando o Objeto
 
 ```php
   $cpt = new \Onyx\Cpt();
@@ -240,4 +330,86 @@ somente o parâmetro **`name(s)`** é obrigatório, podentro ser uma *string* ou
 
   // register post type
   $cpt->register();
+```
+
+### Extendendo a classe
+
+```php
+namespace Paper\Types;
+
+use Onyx\Cpt;
+
+class CptCapas extends Cpt {
+
+  /**
+   * Constructor
+   *
+   * @return void
+   */
+  public function __construct() {
+    $this->names( 'Capa' );
+
+    $this->options([
+      'rewrite'             => [
+        'with_front' => false,
+        'feeds'      => false,
+      ],
+      'custom_caps'         => true,
+      'capability_type'     => 'capa',
+      'menu_position'       => 5,
+      'supports'            => [ 'title' ],
+      'exclude_from_search' => true,
+      'query_var'           => true,
+      'can_export'          => true,
+    ]);
+
+    $this->labels([
+      'add_new'            => 'Adicionar nova',
+      'add_new_item'       => 'Adicionar nova capa',
+      'not_found'          => 'Nenhuma capa encontrada',
+      'not_found_in_trash' => 'Nenhuma capa encontrada na lixeira',
+    ]);
+
+    $this->icon( 'dashicons-admin-page' );
+
+    $this->add_action( 'post_type_link', 'custom_permalink', 1, 3 );
+    $this->add_action( 'init', 'custom_rewrite_rules' );
+    $this->register();
+  }
+
+  /**
+   * Custom permalink structure for CPT
+   * Replace default /capas/title-slug/ for /capas/$post-ID/
+   *
+   * @param string $url The original URL of the post type Capas
+   * @param object $post Post Object from Type Capas 
+   * 
+   * @return string|null
+   */
+  public function custom_permalink( $url, $post = 0 ) {
+    if ( $post->post_type === $this->slug ) {
+      return home_url( $this->slug . '/' . $post->ID . '/' );
+    } else {
+      return $url;
+    }
+  }
+
+  /**
+   * Custom Rewrite for 'custom_permalink' to work
+   * 
+   * @return void
+   */
+  public function custom_rewrite_rules() {
+    add_rewrite_rule( $this->slug . '/([0-9]+)?$', 'index.php?post_type=' . $this->key . '&p=$matches[1]', 'top' );
+  }
+
+}
+```
+
+Após a criação do post type, não esqueça de necessário registrá-lo em `./core/config/app.php` como no exemplo abaixo.
+
+```php
+return [
+  \Paper\Types\CptCapas::class,
+];
 ```

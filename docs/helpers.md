@@ -299,16 +299,6 @@ $img = O::get_img( 'assets/images/logo.jpg' );
 
 ---
 
-### `O::livereload()`
-
-*Método para chamar o script do Live Reload (veja [gulpfile.js](https://github.com/andremacola/onyx-theme/blob/master/gulpfile.js)).*
-
-`O::livereload( $port = 3010 )`
-
-`@return void|false`
-
----
-
 ### `O::gtag()`
 
 *Adicionar html do script do google analytics (método principal)*  
@@ -351,22 +341,6 @@ $img = O::get_img( 'assets/images/logo.jpg' );
 <footer>
   \Onyx\O::analytics( 'UA-XXXXXXX-X', true );
 </footer>
-```
-
----
-
-### `O::print()`
-
-*Imprime uma variável tipo `string` de ambiente do `app`*
-
-`O::print( $key )`
-
-`@echo string`
-
-```php
-// Exemplo de uso
-namespace Onyx;
-O::print( 'version' ); // 1.0
 ```
 
 ---

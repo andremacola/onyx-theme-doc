@@ -2,6 +2,7 @@
 id: introduction
 title: Introdução
 sidebar_label: Introdução
+slug: /
 ---
 
 O [Onyx Theme](https://github.com/andremacola/onyx-theme) tem um modo específico de funcionamento e estrutura de pastas. Ele não segue a estrutura padrão de desenvolvimento do WordPress.
@@ -44,5 +45,6 @@ Alguns projetos que utilizam o [Onyx Theme](https://github.com/andremacola/onyx-
 - [O Imparcial](https://oimparcial.com.br/)
 - [Rofe Distribuidora](https://www.rofedistribuidora.com.br/)
 - [Linhares Jr](https://linharesjr.com)
+- [Marrapa](https://marrapa.com/)
 - [Grupo Dimensão](http://grupodimensao.com/) (legacy version)
 - [Jornal Pequeno](https://jornalpequeno.com.br/) (legacy version)

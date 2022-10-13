@@ -6,15 +6,17 @@ sidebar_label: Setup
 
 ## Proriedades
 
-| Variável   | Tipo    | Descrição                     |
-|------------|---------|-------------------------------|
-| `$app`     | *array* | Variáveis de ambiente         |
-| `$assets`  | *array* | Assets do tema                |
-| `$images`  | *array* | Tamanhos de Thumbnail/Imagens |
-| `$mail`    | *array* | Consiguração do SMTP de email |
-| `$support` | *array* | Recursos do WordPress no Tema |
-| `$cpts`    | *array* | Post types personalizados     |
-| `$taxs`    | *array* | Taxonomias personalizadas     |
+| Variável   | Tipo    | Descrição                        |
+|------------|---------|----------------------------------|
+| `$env`      | *array* | Variáveis de ambiente           |
+| `$classes`  | *array* | Funcionalidades do APP          |
+| `$assets`   | *array* | Assets do tema                  |
+| `$images`   | *array* | Tamanhos de Thumbnail/Imagens   |
+| `$mail`     | *array* | Consiguração do SMTP de email   |
+| `$sidebars` | *array* | Registrar sidebars do WordPress |
+| `$support`  | *array* | Recursos do WordPress no Tema   |
+| `$cpts`     | *array* | Post types personalizados       |
+| `$taxs`     | *array* | Taxonomias personalizadas       |
 
 ---
  
@@ -22,20 +24,15 @@ sidebar_label: Setup
 
  ### __construct()
  ### setup()
- ### load_text_domain()
- ### manage_rest_api()
+ ### register_theme_support()
+ ### register_image_sizes()
  ### register_sidebars()
+ ### register_app_features()
  ### register_post_types()
  ### register_taxonomies()
- ### register_image_sizes()
  ### manage_actions()
  ### manage_filters()
- ### register_hooks()
+ ### load_text_domain()
  ### get_hook_params()
- ### register_theme_support()
  ### load_tests_if_exist()
  ### version()
- ### define()
- ### show()
- ### get()
- ### set()

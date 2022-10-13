@@ -36,6 +36,8 @@ sidebar_label: Cpt
 ### validate_name_params()
 ### create_labels()
 ### create_cpt_arguments()
+### add_action
+### add_filter
 ### register_cpt()
 ### register()
 ### columns()

@@ -170,8 +170,8 @@ use Onyx\Controller;
 class SingleController extends Controller  {
 
   public function initialize() {
-		$this->set_page_templates( 'page' );
-		$this->set_context( 'post', $this->get_post() );
+    $this->set_page_templates( 'page' );
+    $this->set_context( 'post', $this->get_post() );
 
     // cancelar renderização
     $this->no_render();

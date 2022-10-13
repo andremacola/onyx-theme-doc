@@ -25,7 +25,7 @@ module.exports = {
         alt: 'Onyx Theme',
         src: 'img/logo-icon.svg',
       },
-      links: [
+      items: [
         {
           to: 'docs/',
           activeBasePath: 'docs',
@@ -37,7 +37,6 @@ module.exports = {
           label: 'Timber',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://andremacola.github.io/onyx-theme-doc/en/',
           label: 'English',
@@ -83,10 +82,6 @@ module.exports = {
           title: 'Mais',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
               label: 'GitHub',
               href: 'https://github.com/andremacola',
             },
@@ -102,7 +97,6 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'introduction',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:

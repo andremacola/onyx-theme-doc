@@ -29,6 +29,7 @@ module.exports = {
       label: 'Configurações',
       collapsed: false,
       items: [
+        'environment',
         'app',
         'assets',
         'hooks',

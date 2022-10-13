@@ -26,7 +26,7 @@ Verifique se todas as dependências foram instaladas antes de prosseguir:
 ***2 |*** Em seu terminal execute os seguinte comandos:  
 
 ```bash
-# @ themes/onyx-theme/
+# themes/onyx-theme/
 composer install
 yarn install
 ```
