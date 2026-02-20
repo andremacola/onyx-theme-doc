@@ -4,16 +4,16 @@ title: \Onyx\Sidebar
 sidebar_label: Sidebar
 ---
 
-## Propriedades
+## Properties
 
-| Variável | Tipo    | Descrição             |
-|----------|---------|-----------------------|
-| $name    | *array* | Nome da Sidebar       |
-| $args    | *array* | Argumentos da Sidebar |
+| Variable | Type    | Description       |
+|----------|---------|-------------------|
+| $name    | *array* | Sidebar name      |
+| $args    | *array* | Sidebar arguments |
 
 ---
 
-## Métodos
+## Methods
 
 ### __construct()
 ### name()

@@ -4,7 +4,7 @@ title: Javascripts
 sidebar_label: Javascripts
 ---
 
-Utilize somente [ES6 Modules](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/import) ou CommonJS para carregar suas dependências. Verifique o arquivo `src/js/app.js`
+Use only [ES6 Modules](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/import) or CommonJS to load your dependencies. Check the `src/js/app.js` file
 
 ```js
 import defaultExport from 'module-name';
@@ -12,12 +12,11 @@ import defaultExport from 'module-name';
 const myModule = require('module-name');
 ```
 
-Para carregar arquivos externos ou adicionar uma nova tag `<script />`  
-verifique a seção de **Configurações** - [Assets](assets) da documentação.
+To load external files or add a new tag `<script />` check the **[Assets](assets)** doc section.
 
 ---
 
-### Algumas opções
+### Some options
 
 |Dependency          | Install                      | Repository                                        |
 |--------------------|------------------------------|---------------------------------------------------|

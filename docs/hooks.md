@@ -1,41 +1,41 @@
 ---
 id: hooks
-title: Configuração de Actions e Filters (Hooks)
+title: Actions and Filters Loader (Hooks)
 sidebar_label: Hooks
 ---
 
-Todos os Hooks (actions e filters) do WordPress são registrados neste arquivo de configuração `./core/config/hooks.php`. **Você pode utilizar a forma padrão do WordPress** em seus arquivos porém para manter um padrão de desenvolvimento, recomendamos registrar todos os *Hooks* aqui.
+All WordPress Hooks (actions and filters) are registered in this file `./core/config/hooks.php`. **You can use the standard way of WordPress** in your files but to maintain a standard development, we recommend registering all *Hooks* here.
 
 :::warning
-Por favor, **não adicione** funções neste arquivo com exceção de [closures](#closures). Coloque suas funções em algum arquivo na pasta `./core/includes` e faça o require em `functions.php`.
+Please **do not add** functions to this file except for [closures](#closures). Place your functions in a file in the `./core/includes` folder and require in` functions.php`
 :::
 
-Este arquivo retorna um `Array` que é carregado no setup do tema com os seguinte parâmetros:
+This file returns an `Array` which is loaded into the theme setup with the following parameters:
 
 - `filters`:
-  - `add`: alias para a função [add_filter](https://developer.wordpress.org/reference/functions/add_filter/) do WordPress
-  - `remove`: alias para a função [remove_filter](https://developer.wordpress.org/reference/functions/remove_filter/) do WordPress
+  - `add`: [add_filter](https://developer.wordpress.org/reference/functions/add_filter/) function alias from WordPress
+  - `remove`: [remove_filter](https://developer.wordpress.org/reference/functions/remove_filter/) function alias from WordPress
   - `apply`
 - `actions`
-  - `add`: alias para a função [add_action](https://developer.wordpress.org/reference/functions/add_action/) do WordPress
-  - `remove`: alias para a função [remove_action](https://developer.wordpress.org/reference/functions/remove_action/) do WordPress
+  - `add`: [add_action](https://developer.wordpress.org/reference/functions/add_action/) function alias from WordPress
+  - `remove`: [remove_action](https://developer.wordpress.org/reference/functions/remove_action/) function alias from WordPress
 
 ---
 
-## Parâmetros
+## Parameters
 
-O *Array* dos hooks carregam em ordem adicionada e recebem até 4 (quatro) parâmetros:
+The hooks *Array*  load in an added order and receive up to 4 (four) parameters:
 
-| Param              | Tipo       | Descrição                            | Obrigatório |
-|--------------------|------------|--------------------------------------|-------------|
-| `$tag`             | *string*   | tag do Filtro/Action                 | ✔           |
-| `$function_to_add` | *callable* | Função para chamar                   | ✔           |
-| `$priority`        | *int*      | Prioridade (padrão: 10)              | ✘           |
-| `$accepted_args`   | *int*      | Quantidade de argumentos (padrão: 1) | ✘           |
+| Param              | Type       | Description                      | Required |
+|--------------------|------------|----------------------------------|----------|
+| `$tag`             | *string*   | Filter/Action tag                | ✔        |
+| `$function_to_add` | *callable* | Callable function                | ✔        |
+| `$priority`        | *int*      | Priority (default: 10)           | ✘        |
+| `$accepted_args`   | *int*      | Number of arguments (default: 1) | ✘        |
 
 ---
 
-## Exemplo de Uso
+## Example of use
 
 ```php
 'filters' => [
@@ -59,7 +59,7 @@ O *Array* dos hooks carregam em ordem adicionada e recebem até 4 (quatro) parâ
 
 ## Closures
 
-Você também pode adicionar filtros ou actions utilizando uma função anônima.
+You can also add filters or actions using an anonymous function.
 
 ```php
 'filters' => [

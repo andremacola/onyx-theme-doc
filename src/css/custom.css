@@ -30,7 +30,7 @@ html[data-theme=dark] {
 }
 
 .onyx-logo {
-  background-image: url('/onyx-theme-doc/img/logo.svg');
+  background-image: url('/onyx-theme-doc/en/img/logo.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -41,7 +41,7 @@ html[data-theme=dark] {
 }
 
 html[data-theme=dark] .onyx-logo {
-  background-image: url('/onyx-theme-doc/img/logo-light.svg');
+  background-image: url('/onyx-theme-doc/en/img/logo-light.svg');
 }
 
 .docusaurus-highlight-code-line {

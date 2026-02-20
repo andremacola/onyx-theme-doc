@@ -1,12 +1,12 @@
 ---
 id: routes
-title: Rotas
-sidebar_label: Rotas
+title: Routes
+sidebar_label: Routes
 ---
 
-O Onyx theme não gerencia rotas além dos [Controllers](controllers) e [Rest API Endpoints](rest).
+The Onyx theme does not manage routes other than [Controllers](controllers) and [Rest API Endpoints](rest).
 
-Caso seja de sua necessidade a criação de rotas personalizadas para seu tema ou aplicação, considere utilizar uma das funções e filtros do WordPress:
+If you need to create custom routes for your theme or application, consider using one of the WordPress functions and filters:
 
 - [`add_rewrite_rule()`](https://developer.wordpress.org/reference/functions/add_rewrite_rule/)
 - [`add_rewrite_tag()`](https://developer.wordpress.org/reference/functions/add_rewrite_tag/)
@@ -17,7 +17,7 @@ Caso seja de sua necessidade a criação de rotas personalizadas para seu tema o
 - [`parse_request`](https://codex.wordpress.org/Plugin_API/Action_Reference/parse_request)
 - [`request`](https://codex.wordpress.org/Plugin_API/Filter_Reference/request)
 
-Você também pode utilizar algumas das soluções abaixo:
+You can also use some of the solutions below:
 
 - [Upstatement/routes](https://github.com/Upstatement/routes)
 - [Rareloop/router](https://github.com/Rareloop/router)

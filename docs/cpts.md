@@ -4,42 +4,42 @@ title: Post Types Personalizados
 sidebar_label: Post Types
 ---
 
-O *Onyx* provê a possibilidade de criação de Post Types personalizados que podem ser feitas de duas formas. A primeira por meio deste arquivo `./core/config/cpts.php` e a outra é instanciando um objeto da classe [`\Onyx\Cpt()`](class-cpt).
+*Onyx* provides the possibility of creating custom Post Types that can be done in two ways. The first through this file `./core/config/cpts.php` and the other is by instantiating an object of the class [`\Onyx\Cpt()`](class-cpt).
 
 ---
 
-## Parâmetros
+## Parameters
 
-O único parâmetro obrigatório é o `name(s)` do post type podendo ser uma *string* como podemos ver no [*Exemplo 1*](#criando-post-types) ou um *array* como no [*Exemplo 2*](#criando-post-types). O Onyx vai extrair automaticamente `slug`, `labels`, `options` caso não sejam fornecidos assim como tentará aplicar o *plural* nas labels necessárias.
+The only Required parameter is the `name(s)` of the post type and can be a *string* as we can see in [*Example 1*](#creating-post-types) or an *array* as in [*Example 2*](#creating-post-types). Onyx will automatically extract `slug`, `labels`, `options` if they are not provided as well as try to apply *plural* to the necessary labels.
 
 :::caution
-Caso **não fornecido**, o parâmetro `slug` será utilizado para criação do post type e é ele que deverá ser utilizado para queries e relacionamentos. Por padrão o `slug` é extraído do valor `name` transformado para o plural.
+If **not provided**, the parameter `slug` will be used to create the post type and it is the one that should be used for queries and relationships. By default, `slug` is extracted from the value `name` transformed to the plural.
 
-*Ex: 'Gêneros de Filme' terá como plural 'Gêneros de Filmes' e slug 'generos-de-filmes'.*
+*Ex: 'Custom Product' plural will be 'Custom Products' and slug 'custom-products'.*
 :::
 
-| Param     | Tipo           | Descrição                                 | Obrigatório |
-|-----------|----------------|-------------------------------------------|-------------|
-| `name(s)` | *string/array* | Nome do Post Type                         | ✔           |
-| `icon`    | *string*       | Ícone do Post Type                        | ✘           |
-| `labels`  | *array*        | Labels customizadas                       | ✘           |
-| `options` | *array*        | Argumentos de funcionamento               | ✘           |
-| `filters` | *array*        | Filtros de pesquisa (selects) no admin    | ✘           |
-| `columns` | *array*        | Registrar colunas personalizadas no admin | ✘           |
+| Param     | Type           | Description                                     | Required |
+|-----------|----------------|-------------------------------------------------|----------|
+| `name(s)` | *string/array* | Post Type name                                  | ✔        |
+| `icon`    | *string*       | Post Type icon                                  | ✘        |
+| `labels`  | *array*        | Custom labels                                   | ✘        |
+| `options` | *array*        | Operating arguments                             | ✘        |
+| `filters` | *array*        | Admin search filters (selects for *taxonomies*) | ✘        |
+| `columns` | *array*        | Register custom columns in the admin            | ✘        |
 
 :::info
-Para saber as opções das `labels` e `options`, visite a documentação do WordPress [register_post_type()](https://developer.wordpress.org/reference/functions/register_post_type/) e [get_post_type_labels()](https://developer.wordpress.org/reference/functions/get_post_type_labels/)
+To learn about options for `labels` and` options`, visit the WordPress instructions [register_post_type()](https://developer.wordpress.org/reference/functions/register_post_type/) and [get_post_type_labels()](https://developer.wordpress.org/reference/functions/get_post_type_labels/)
 :::
 
 :::info
-Ao adicionar parâmetros como `labels` ou `options`, você não precisa incluir todas as opções. Somente os parâmetros que você determinar serão substituídos no modelo.
+When adding parameters like `labels` or` options`, you do not need to include all options. Only the parameters you determine will be replaced in the model.
 :::
 
 ---
 
-## Criando Post Types
+## Creating Post Types
 
-Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Cpt()`](cpts#instanciando-um-post-type).
+Using this method, you **don't need** to instantiate the class  [`\Onyx\Cpt()`](instanciando-um-post-type).
 
 ```php
   /*
@@ -58,7 +58,7 @@ Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Cpt(
     'names'   => [
       'name'   => 'Product',   // required
       'plural' => 'Products' , // optional
-      'slug'   => 'products' , // optional
+      'slug'   => 'produtct' , // optional
     ],
     'icon' => 'dashicons-admin-post',
     'labels'  => [
@@ -74,12 +74,11 @@ Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Cpt(
 
 ---
 
-## Filtros de Pesquisa
+## Search Filters
 
-Ao registrar uma [Taxonomia](taxonomies) personalizada, você pode também adicionar filtros de pesquisa na tabela de listagem do admin do WordPress
+When registering a custom [Taxonomy](taxonomies), you can also add search filters to the WordPress admin listing table
 
 ```php
-
   /*
   |--------------------------------------------------------------------------
   | Post type with custom admin filters
@@ -89,46 +88,44 @@ Ao registrar uma [Taxonomia](taxonomies) personalizada, você pode também adici
     'My First CPT',
     'filters' => [ 'my-custom-tax', 'other-custom-tax' ],
   ],
-
 ```
 
 ---
 
-## Colunas Personalizadas
+## Custom Admin Columns
 
-Você pode **incluir**, **remover** ou **reordenar** colunas personalizadas na tabela de listagem do admin do WordPress ao registrar um Post Type. Isso é bem útil quando você tem *custom fields* ou *taxonomias personalizadas*
+You can **include**, **remove** or **reorder** custom columns in the WordPress admin listing table when registering a Post Type. This is very useful when you have *custom fields* or *custom taxonomies*
 
 :::info
-Para adicionar colunas de **taxonomias**, ver registro em [Taxonomia](taxonomies).
+To add columns for **taxonomies**, see entry in [Taxonomy](taxonomies).
 :::
 
-| Param   | Tipo    | Descrição              | Obrigatório |
-|---------|---------|------------------------|-------------|
-| `add`   | *array* | Colunas para adicionar | ✘           |
-| `order` | *array* | Ordenação das colunas  | ✘           |
-| `hide`  | *array* | Remover colunas        | ✘           |
+| Param   | Type    | Description    | Required |
+|---------|---------|----------------|----------|
+| `add`   | *array* | Columns to add | ✘        |
+| `order` | *array* | Columns order  | ✘        |
+| `hide`  | *array* | Remove Columns | ✘        |
 
 ### add
 
-| Param      | Tipo       | Descrição                                           | Obrigatório |
-|------------|------------|-----------------------------------------------------|-------------|
-| `label`    | *string*   | Label da coluna                                     | ✔           |
-| `populate` | *callable* | Função que recebe 2 valores `fn($column, $post_id)` | ✔           |
-| `sort`     | *string*   | Meta Key para ordenação                             | ✘           |
-| `numeric`  | *bool*     | Ordenar via numeral ou string                       | ✘           |
+| Param      | Type       | Description                                             | Required |
+|------------|------------|---------------------------------------------------------|----------|
+| `label`    | *string*   | Column label                                            | ✔        |
+| `populate` | *callable* | Function that receives 2 values `fn($column, $post_id)` | ✔        |
+| `sort`     | *string*   | Meta Key for sorting                                    | ✘        |
+| `numeric`  | *bool*     | Sort via numeric or string                              | ✘        |
 
 ### order
 
-Um array com a `chave ou nome da coluna`. As colunas na tabela irão aparecer na ordem de inclusão do array.
+An array with the `key or column name`. The columns will appear in the order of inclusion within the array.
 
 ### hide
 
-Um array contendo a `chave ou nome da coluna`. As colunas adicionadas aqui serão removidas da tabela de listagem do admin.
+An array with the `key or column name`. Columns added here will be removed from the admin list table.
 
-### Exemplo de Uso
+### Example of use
 
 ```php
-
   /*
   |--------------------------------------------------------------------------
   | Products Post Type with Custom Columns
@@ -162,7 +159,6 @@ Um array contendo a `chave ou nome da coluna`. As colunas adicionadas aqui serã
       'hide'  => [ 'author' ], // hide author column
     ],
   ],
-
 ```
 
 ```php
@@ -179,103 +175,13 @@ function get_meta_field_2($column, $post_id) {
 
 ---
 
-## Regras de Capacidades
+## Instantiating a Post Type
 
-Ao criar um post type, você poderá definir [capacidades](https://developer.wordpress.org/reference/functions/register_post_type/#capability_type) personalizadas caso necessário.
-
-### capability_type
-
-O atributo `capability_type` cria automaticamente as capacidades primitivas do WordPress baseadas no valor passado *(edit_MYCPT, edit_others_MYCPT, delete_MYCPT, publish_MYCPT, read_private_MYCPT)*
-
-```php
-  /*
-  |--------------------------------------------------------------------------
-  | My Custom Cap CPT
-  |--------------------------------------------------------------------------
-  */
-  [
-    'names'   => [
-      'name'   => 'Cap',
-      'plural' => 'Caps' ,
-      'slug'   => 'caps' ,
-    ],
-    'icon' => 'dashicons-admin-post',
-    'options' => [
-      'capability_type' => 'cap'
-    ],
-  ],
-```
-
-Este exemplo irá setar:
-
-- *`edit_post` como* ***`edit_cap`***
-- *`read_post` como* ***`read_cap`***
-- *`delete_post` como* ***`delete_cap`***
-- *`edit_posts` como* ***`edit_caps`***
-- *`edit_others_posts` como* ***`edit_others_caps`***
-- *`delete_posts` como* ***`delete_caps`***
-- *`publish_posts` como* ***`publish_caps`***
-- *`read_private_posts` como* ***`read_private_caps`***
-- *`create_posts` como* ***`edit_caps`***
-
-### custom_caps
-
-O atributo `custom_caps` adiciona automaticamente todas as capacidades primitivas ***extras*** do WordPress baseadas no valor passado. Ao usar `custom_caps`, não é necessário passar o parâmetro `capability_type`. O Onyx theme usará o `name` do Post Type para gerar as capacidades.
-
-```php
-  /*
-  |--------------------------------------------------------------------------
-  | My Advanced Custom Cap CPT
-  |--------------------------------------------------------------------------
-  */
-  [
-    'names'   => [
-      'name'   => 'Product',
-      'plural' => 'Products' ,
-      'slug'   => 'products' ,
-    ],
-    'icon' => 'dashicons-admin-post',
-    'options' => [
-      'custom_caps' => true
-    ],
-  ],
-```
-
-Este exemplo irá setar regras mais completas:
-
-- `edit_product`
-- `read_product`
-- `delete_product`
-- `edit_products`
-- `edit_others_products`
-- `publish_products`
-- `read_private_products`
-- `create_products`
-- `read_products`
-- `delete_products`
-- `delete_private_products`
-- `delete_published_products`
-- `delete_others_products`
-- `edit_private_products`
-- `edit_published_products`
+In addition to being able to create a Post Type using the record in the `./core/config/cpts.php` file, you can instantiate an object and manually create its CPT using the class [`\Onyx\Cpt`](class-cpt)
 
 :::info
-Se você precisar de regras mais personalizadas, utilize o atributo [***capabilities***](https://developer.wordpress.org/reference/functions/register_post_type/#capabilities) padrão do WordPress e determine manualmente todas as capacidades necessárias.
+only the parameter **`name(s)`** is required, it can either be a *string* or an *array*.
 :::
-
----
-
-## Instanciando um Post Type
-
-Além de poder criar um Post Type utilizando o registro no arquivo `./core/config/cpts.php`, você pode instanciar um objeto e criar manualmente seu CPT usando a classe [`\Onyx\Cpt`](class-cpt)
-
-Caso esteja extendendo a classe `\Onyx\Cpt` você ainda pode utilizar os métodos [`add_action`](class-cpt#add_action) e [`add_filter`](class-cpt#add_filter) personalizados para criar hooks do wordpress dentro de seu objeto mais facilmente.
-
-:::info
-somente o parâmetro **`name(s)`** é obrigatório, podentro ser uma *string* ou um *array*.
-:::
-
-### Criando o Objeto
 
 ```php
   $cpt = new \Onyx\Cpt();
@@ -330,86 +236,4 @@ somente o parâmetro **`name(s)`** é obrigatório, podentro ser uma *string* ou
 
   // register post type
   $cpt->register();
-```
-
-### Extendendo a classe
-
-```php
-namespace Paper\Types;
-
-use Onyx\Cpt;
-
-class CptCapas extends Cpt {
-
-  /**
-   * Constructor
-   *
-   * @return void
-   */
-  public function __construct() {
-    $this->names( 'Capa' );
-
-    $this->options([
-      'rewrite'             => [
-        'with_front' => false,
-        'feeds'      => false,
-      ],
-      'custom_caps'         => true,
-      'capability_type'     => 'capa',
-      'menu_position'       => 5,
-      'supports'            => [ 'title' ],
-      'exclude_from_search' => true,
-      'query_var'           => true,
-      'can_export'          => true,
-    ]);
-
-    $this->labels([
-      'add_new'            => 'Adicionar nova',
-      'add_new_item'       => 'Adicionar nova capa',
-      'not_found'          => 'Nenhuma capa encontrada',
-      'not_found_in_trash' => 'Nenhuma capa encontrada na lixeira',
-    ]);
-
-    $this->icon( 'dashicons-admin-page' );
-
-    $this->add_action( 'post_type_link', 'custom_permalink', 1, 3 );
-    $this->add_action( 'init', 'custom_rewrite_rules' );
-    $this->register();
-  }
-
-  /**
-   * Custom permalink structure for CPT
-   * Replace default /capas/title-slug/ for /capas/$post-ID/
-   *
-   * @param string $url The original URL of the post type Capas
-   * @param object $post Post Object from Type Capas 
-   * 
-   * @return string|null
-   */
-  public function custom_permalink( $url, $post = 0 ) {
-    if ( $post->post_type === $this->slug ) {
-      return home_url( $this->slug . '/' . $post->ID . '/' );
-    } else {
-      return $url;
-    }
-  }
-
-  /**
-   * Custom Rewrite for 'custom_permalink' to work
-   * 
-   * @return void
-   */
-  public function custom_rewrite_rules() {
-    add_rewrite_rule( $this->slug . '/([0-9]+)?$', 'index.php?post_type=' . $this->key . '&p=$matches[1]', 'top' );
-  }
-
-}
-```
-
-Após a criação do post type, não esqueça de necessário registrá-lo em `./core/config/app.php` como no exemplo abaixo.
-
-```php
-return [
-  \Paper\Types\CptCapas::class,
-];
 ```

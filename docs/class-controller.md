@@ -4,21 +4,21 @@ title: \Onyx\Controller
 sidebar_label: Controller
 ---
 
-Veja mais informações sobre os métodos e seus parâmetros na [referência completa](https://github.com/andremacola/onyx-theme/blob/master/core/app/Onyx/Controller.php)
+See more information about the methods and their parameters in the [complete reference](https://github.com/andremacola/onyx-theme/blob/master/core/app/Onyx/Controller.php)
 
 ---
 
-## Propriedades
+## Properties
 
-| Variável     | Tipo           | Descrição                    |
-|--------------|----------------|------------------------------|
-| `$templates` | *string/array* | Templates relacionados       |
-| `$context`   | *array*        | Timber context               |
-| `$reder`     | *bool*         | Timber::render. Padrão: true |
+| Variable     | Type           | Description                   |
+|--------------|----------------|-------------------------------|
+| `$templates` | *string/array* | Related templates             |
+| `$context`   | *array*        | Timber context                |
+| `$reder`     | *bool*         | Timber::render. Default: true |
 
 ---
 
-## Métodos
+## Methods
 
 ### __construct()
 ### initialize()

@@ -4,19 +4,19 @@ title: \Onyx\Controller
 sidebar_label: RestController
 ---
 
-Veja mais informações sobre os métodos e seus parâmetros na [referência completa](https://github.com/andremacola/onyx-theme/blob/master/core/app/Onyx/RestController.php)
+See more information about the methods and their parameters in the [complete reference](https://github.com/andremacola/onyx-theme/blob/master/core/app/Onyx/RestController.php)
 
 ---
 
-## Propriedades
+## Properties
 
-| Variável     | Tipo           | Descrição         |
-|--------------|----------------|-------------------|
-| `$namespace` | *string/array* | Namespace da Rota |
+| Variable     | Type           | Description     |
+|--------------|----------------|-----------------|
+| `$namespace` | *string/array* | Route namespace |
 
 ---
 
-## Métodos
+## Methods
 
 ### __construct()
 ### register_routes()

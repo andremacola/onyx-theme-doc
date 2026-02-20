@@ -4,12 +4,12 @@ title: Helper Methods
 sidebar_label: Helpers
 ---
 
-O [Onyx Theme](https://github.com/andremacola/onyx-theme) é munido de diversas funções de ajuda para o desenvolvimento do projeto.
+The [Onyx Theme](https://github.com/andremacola/onyx-theme) is equipped with several help functions for the development of the project.
 
-Essas funções são métodos estáticos da classe `\Onyx\Helpers` que tem como alias `\Onyx\O`.
+These functions are `\Onyx\Helpers` class static methods, aliased to `\Onyx\O`.
 
 :::info
-Para resolver problemas com o intelisense, sempre utilize o alias `O` para a classe Helpers.
+To solve problems with intelisense, always use the alias `O` for the Helpers class.
 ```php
 use Onyx\Helpers as O;
 ```
@@ -22,59 +22,57 @@ use Onyx\Helpers as O;
 
 ---
 
-## Métodos
+## Methods
 
 ### `O::conf()`
 
-*Retorna variáveis de ambiente. Use com cautela.*  
-*O retorno somente funciona caso o arquivo ja tenha sido previamente carregado pela [`\Onyx\O::load()`](#método-load-file-obj--true-)*
+*Returns environment variables. Use with caution.*  
+*The return only works if the file has already been previously loaded by [`\Onyx\O::load()`](#método-load-file-obj--true-)*
 
 `\Onyx\O::conf( $name = false )`
 
-|Param | Tipo | Descrição                       | Obrigatório
-|------|------|---------------------------------|------------|
-| `$name` | *string* | Arquivo de configuração  | ✘          |
+| Param   | Type     | Description         | Required |
+|---------|----------|---------------------|----------|
+| `$name` | *string* | Configuration file* | ✘        |
 
 `@return object|false`
 
-***Variável de configuração:*** pode ser o nome qualquer arquivo que se encontre na pasta `./core/config/`  
+***Configuration variable:*** any file in the `./core/config/` folder can be the name  
 Ex: `app | assets | hooks | images | mail | support`
 
-Verifique os arquivos para retornar.
+Check the files to return.
 
 ```php
-// Exemplos de uso
-
+// Example of use
 namespace Onyx;
-O::conf('app')                    // Todos os parâmetro do arquivo ./core/config/app.php
+O::conf('app')                    // All parameters in the `./core/config/app.php` file
 O::conf('app')->version;          // 1.0
 O::conf('app')->dir_uri;          // http://site.onyx.local/app/themes/onyx
 O::conf('app')->desc;             // My Site Description
-O::conf('assets')->css;           // Objeto|Array dos estilos carregados
-O::conf('hooks')->filters['add']; // Objeto|Array dos filtros adicionados
+O::conf('assets')->css;           // Objeto|Array loaded styles
+O::conf('hooks')->filters['add']; // Objeto|Array added filters
 ```
 
 ---
 
 ### `O::load()`
 
-*Carrega arquivos de configuração. O arquivo precisa retornar um* ***array***.  
-*Método utilizado para **fazer o setup** do tema pela classe `\Onyx\Setup`*
+*Load configuration files. The file must return an* ***array***.  
+*Method used to **setup** the theme by the class `\Onyx\Setup`*
 
 `\Onyx\O::load( $file, $obj = true )`  
 
-| Param   | Tipo      | Descrição            | Obrigatório |
+| Param   | Type      | Description            | Required |
 |---------|-----------|----------------------|-------------|
-| `$file` | *string*  | Nome do Arquivo     | ✔            |
-| `$obj`  | *boolean* | Retornar como objeto | ✘           |
+| `$file` | *string*  | File Name      | ✔           |
+| `$obj`  | *boolean* | Return as object | ✘           |
 
 `@return array|object|false`
 
-***Nome do Arquivo:*** o arquivo obrigatoriamente tem que estar na pasta `./core/config/`  
+***File Name:*** the file must be in the `./core/config/` folder  
 
 ```php
-// Exemplos de uso
-
+// Example of use
 namespace Onyx;
 $this->app      = O::load( 'app' );
 $this->assets   = O::load( 'assets' );
@@ -90,7 +88,7 @@ $this->taxs     = O::load( 'taxonomies' );
 
 ### `O::set_hierarchy()`
 
-*Setar hierarquia de templates carregados no boot*
+*Set hierarchy of templates loaded at boot.*
 
 `O::set_hierarchy( $hierarchy = [] )`
 
@@ -98,11 +96,11 @@ $this->taxs     = O::load( 'taxonomies' );
 
 ### `O::get_hierarchy()`
 
-*Capturar hierarquia de templates carregados no boot*  
-*Coloque o sufixo `Controller` no nome do arquivo para pegar o arquivo do controller*
+*Capture hierarchy of templates loaded at boot.*  
+*Put the suffix `Controller` in the file name to get the file from the controller.*
 
 ```php
-// Exemplo de uso
+// Example of use
 var_dump( O::get_hierarchy() );
 ```
 
@@ -110,20 +108,19 @@ var_dump( O::get_hierarchy() );
 
 ### `O::array_filter_keys()`
 
-*Filtrar array multidimensional recursivamente removendo as chaves passadas como parâmetro.*
+*Filter multidimensional array recursively by removing the keys passed as a parameter.*
 
 `O::array_filter_keys( $arr, $filter )`
 
-| Param     | Tipo    | Descrição           | Obrigatório |
-|-----------|---------|---------------------|-------------|
-| `$arr`    | *array* | Array de origem     | ✔           |
-| `$filter` | *array* | Chaves para remover | ✔           |
+| Param     | Type    | Description    | Required |
+|-----------|---------|----------------|----------|
+| `$arr`    | *array* | Source array   | ✔        |
+| `$filter` | *array* | Keys to remove | ✔        |
 
 `@return array`
 
 ```php
-// Exemplos de uso
-
+// Example of use
 namespace Onyx;
 $app = [
   'version' => '1.0',
@@ -142,15 +139,15 @@ $app_filtered = O::array_filter_keys( $app, $remove );
 
 ### `O::is_amp()`
 
-*Método para funcionamento do plugin [AMP](https://br.wordpress.org/plugins/amp/). Verifica se a página atual é uma página* **AMP**.
+*Method for working with the [AMP](https://br.wordpress.org/plugins/amp/) plugin. Checks whether the current page is a* **AMP** page.
 
 `@return bool`
 
 ```php
-// Exemplo de uso
+// Example of use
 namespace Onyx;
 if (O::is_amp()) {
-  echo "Esta é uma página AMP";
+  echo "This is an AMP page";
 }
 ```
 
@@ -158,21 +155,21 @@ if (O::is_amp()) {
 
 ### `O::valid_url()`
 
-*Validar uma url a partir de uma* **string**.
+*Validate a url from a* **string**.
 
 `O::valid_url( $uri )`
 
-| Param  | Tipo     | Descrição       | Obrigatório |
-|--------|----------|-----------------|-------------|
-| `$uri` | *string* | Um endereço web | ✔           |
+| Param  | Type     | Description | Required |
+|--------|----------|-------------|----------|
+| `$uri` | *string* | URL Address | ✔        |
 
 `@return bool`
 
 ```php
-// Exemplo de uso
+// Example of use
 namespace Onyx;
 if (O::valid_url('https://github.com')) {
-  echo "Esta é uma URL válida";
+  echo "This is a valid URL";
 }
 ```
 
@@ -180,19 +177,19 @@ if (O::valid_url('https://github.com')) {
 
 ### `O::static_path()`
 
-*Retorna o caminho da url do `asset` baseado na localização do arquivo*  
-*se é um arquivo remoto ou local. Usa o método* [static_uri](#ostatic_uri).
+*Returns the `asset` url path based on the file location*  
+*whether it is a remote or local file. Uses the method* [static_uri](#ostatic_uri).
 
 `O::static_path( $file )`
 
-| Param   | Tipo     | Descrição                         | Obrigatório |
-|---------|----------|-----------------------------------|-------------|
-| `$file` | *string* | Localização do arquivo ou uma URL | ✔           |
+| Param   | Type     | Description            | Required |
+|---------|----------|------------------------|----------|
+| `$file` | *string* | File location or a URL | ✔        |
 
 `@return string`
 
 ```php
-// Exemplo de uso
+// Example of use
 namespace Onyx;
 O::static_path( 'assets/css/home.css' ) // http://site.onyx.local/app/themes/onyx/assets/css/home.css
 ```
@@ -201,18 +198,18 @@ O::static_path( 'assets/css/home.css' ) // http://site.onyx.local/app/themes/ony
 
 ### `O::static_uri()`
 
-*Retorna o diretório dos `assets` de acordo com a constante de ambiente `ONYX_STATIC`*  
-*(definida no parâmetro `static` em `./core/config/app.php`).*
+*Returns the `assets` directory according to the `ONYX_STATIC` environment constant*  
+*(defined in the `static` parameter at `./core/config/app.php`).*
 
-*O padrão do subdomínio será: `//{$subdomain}.domain.tld/THEME_FOLDER/assets`*
+*The subdomain pattern will be: `//{$subdomain}.domain.tld/THEME_FOLDER/assets`*
 
 :::info
-Para utilizar a constante ***ONIX_STATIC*** você precisará configurar um cdn ou um subdomínio apontando para a pasta `themes` do WordPress em seu servidor.
+To use the constant ***ONIX_STATIC*** you will need to configure a cdn or a subdomain pointing to the WordPress `themes` folder on your server.
 :::
 
 :::caution
-Prefira utilizar o método [`O::static_path()`](#static_path)  
-Utilize este método caso queira personalizar o retorno em uma função própria. Para mais informações veja a declaração do método *static_path()* no arquivo [`Helpers.php`](https://github.com/andremacola/onyx-theme/blob/18c7d6f55f530d6bd379f025b1dcb28a5da3ad5e/core/app/Onyx/Helpers.php#L130)
+Prefer to use [`O::static_path()`](#static_path)  
+Use this method if you want to customize the return in a specific function. For more information see the *static_path()* method declaration in the [`Helpers.php`](https://github.com/andremacola/onyx-theme/blob/18c7d6f55f530d6bd379f025b1dcb28a5da3ad5e/core/app/Onyx/Helpers.php#L130) file
 :::
 
 ```php
@@ -224,21 +221,21 @@ O::static_uri( $uri, $subdomain = 'static' )
 
 ### `O::get_img()`
 
-*Retornar uma imagem do diretório do tema*
+*Return an image from the theme directory*
 
 `O::get_img( $img, $title = null, $w = null, $h = null )`
 
-| Param    | Tipo     | Descrição         | Obrigatório |
-|----------|----------|-------------------|-------------|
-| `$img`   | *string* | Caminho da Imagem | ✔           |
-| `$title` | *string* | Título da Imagem  | ✘           |
-| `$w`     | *string* | Largura da Imagem | ✘           |
-| `$h`     | *string* | Altura da Imagem  | ✘           |
+| Param    | Type     | Description  | Required |
+|----------|----------|--------------|----------|
+| `$img`   | *string* | Image Path   | ✔        |
+| `$title` | *string* | Image Title  | ✘        |
+| `$w`     | *string* | Image Width  | ✘        |
+| `$h`     | *string* | Image Height | ✘        |
 
 `@return string`
 
 ```php
-// Exemplo de uso
+// Example of use
 namespace Onyx;
 $img = O::get_img( 'assets/images/logo.jpg' );
 ```
@@ -247,7 +244,7 @@ $img = O::get_img( 'assets/images/logo.jpg' );
 
 ### `O::img()`
 
-*Alias do método [`O::get_img()`](#oget_img) porém imprime na tela*
+*[`O::get_img()`](#oget_img) alias but prints on the screen*
 
 `O::img( $img, $title = null, $w = null, $h = null )`
 
@@ -257,19 +254,19 @@ $img = O::get_img( 'assets/images/logo.jpg' );
 
 ### `O::css()`
 
-*Imprime uma tag `<link rel="stylesheet" href="{$css}">`*
+*Print `<link rel="stylesheet" href="{$css}">` tag*
 
 `O::css( $css, $home = false )`
 
-| Param   | Tipo     | Descrição                | Obrigatório |
-|---------|----------|--------------------------|-------------|
-| `$css`  | *string* | Caminho ou URL do css    | ✔           |
-| `$home` | *bool*   | Aparecer somente na Home | ✘           |
+| Param   | Type     | Description         | Required |
+|---------|----------|---------------------|----------|
+| `$css`  | *string* | CSS path or URL     | ✔        |
+| `$home` | *bool*   | Appear only on Home | ✘        |
 
 `@echo string`
 
 ```php
-// Exemplo de uso
+// Example of use
 <head>
   \Onyx\O::css( 'assets/css/main.css' );
 </head>
@@ -279,19 +276,19 @@ $img = O::get_img( 'assets/images/logo.jpg' );
 
 ### `O::js()`
 
-*Imprime uma tag `<script src="{$js}"></script>`*
+*Print `<script src="{$js}"></script>` tag*
 
 `O::js( $js, $home = false )`
 
-| Param   | Tipo     | Descrição                | Obrigatório |
-|---------|----------|--------------------------|-------------|
-| `$js`   | *string* | Caminho ou URL do js     | ✔           |
-| `$home` | *bool*   | Aparecer somente na Home | ✘           |
+| Param   | Type     | Description            | Required |
+|---------|----------|------------------------|----------|
+| `$js`   | *string* | Javascript path or URL | ✔        |
+| `$home` | *bool*   | Appear only on Home    | ✘        |
 
 `@echo string`
 
 ```php
-// Exemplo de uso
+// Example of use
 <head>
   \Onyx\O::js( 'assets/js/app.js' );
 </head>
@@ -299,22 +296,32 @@ $img = O::get_img( 'assets/images/logo.jpg' );
 
 ---
 
+### `O::livereload()`
+
+*Method to call the Live Reload script (see [gulpfile.js](https://github.com/andremacola/onyx-theme/blob/master/gulpfile.js)).*
+
+`O::livereload( $port = 3010 )`
+
+`@return void|false`
+
+---
+
 ### `O::gtag()`
 
-*Adicionar html do script do google analytics (método principal)*  
-*Utiliza `gtag.js` do Google*
+*Add HTML for google analytics script (main method)*  
+*Uses `gtag.js` from Google*
 
 `O::gtag( $uax, $script = false )`
 
-| Param     | Tipo     | Descrição                                                            | Obrigatório |
-|-----------|----------|----------------------------------------------------------------------|-------------|
-| `$uax`    | *string* | Google UA ID                                                         | ✔           |
-| `$script` | *bool*   | Carregar o script `https://www.googletagmanager.com/gtag/js?id=$uax` | ✘           |
+| Param     | Type     | Description                                                        | Required |
+|-----------|----------|--------------------------------------------------------------------|----------|
+| `$uax`    | *string* | Google UA ID                                                       | ✔        |
+| `$script` | *bool*   | Load the script `https://www.googletagmanager.com/gtag/js?id=$uax` | ✘        |
 
 `@echo <script />`
 
 ```php
-// Exemplo de uso
+// Example of use
 <footer>
   \Onyx\O::gtag( 'UA-XXXXXXX-X', true );
 </footer>
@@ -324,20 +331,20 @@ $img = O::get_img( 'assets/images/logo.jpg' );
 
 ### `O::analytics()`
 
-*Adicionar html do script do google analytics (legado)*  
-*Utiliza `analytics.js` do Google*
+*Add HTML for google analytics script (legacy)*  
+*Uses `analytics.js` from Google*
 
 `O::gtag( $uax, $script = false )`
 
-| Param     | Tipo     | Descrição                                                         | Obrigatório |
-|-----------|----------|-------------------------------------------------------------------|-------------|
-| `$uax`    | *string* | Google UA ID                                                      | ✔           |
-| `$script` | *bool*   | Carregar o script `https://www.google-analytics.com/analytics.js` | ✘           |
+| Param     | Type     | Description                                                     | Required |
+|-----------|----------|-----------------------------------------------------------------|----------|
+| `$uax`    | *string* | Google UA ID                                                    | ✔        |
+| `$script` | *bool*   | Load the script `https://www.google-analytics.com/analytics.js` | ✘        |
 
 `@echo <script />`
 
 ```php
-// Exemplo de uso
+// Example of use
 <footer>
   \Onyx\O::analytics( 'UA-XXXXXXX-X', true );
 </footer>
@@ -345,25 +352,41 @@ $img = O::get_img( 'assets/images/logo.jpg' );
 
 ---
 
+### `O::print()`
+
+*Print an `app` enviroment parameter (string)*
+
+`O::print( $key )`
+
+`@echo string`
+
+```php
+// Example of use
+namespace Onyx;
+O::print( 'version' ); // 1.0
+```
+
+---
+
 ### `O::is_dev()`
 
-*Verifica se o usuário logado é um desenvolvedor*
-*Use com cautela, método usado somente para desenvolvimento/debug*
+*Checks whether the logged in user is a developer*
+*Use with caution, method used only for development/debugging*
 
 `O::is_dev()`
 
 `@return bool`
 
 ```php
-// Exemplo de uso
+// Example of use
 namespace Onyx;
 if ( O::is_dev() ) {
-  echo "É um desenvolvedor";
+  echo "Is a developer";
 }
 ```
 
 :::info
-Adicione os emails dos desenvolvedores em `./core/config/app.php`
+Add developer emails at `./core/config/app.php`
 :::
 
 ---
@@ -372,20 +395,20 @@ Adicione os emails dos desenvolvedores em `./core/config/app.php`
 
 ### `O::section_title()`
 
-*Retornar o título da seção atual, dependendo do tipo da rota da seção do WordPress*
+*Return the title of the current section, depending on the route type of the WordPress section*
 
 `O::section_title( $echo = true, $prefix = '' )`
 
-| Param     | Tipo     | Descrição            | Obrigatório |
-|-----------|----------|----------------------|-------------|
-| `$echo`   | *bool*   | Imprimir ou retornar | ✘           |
-| `$prefix` | *string* | Prefixo              | ✘           |
+| Param     | Type     | Description     | Required |
+|-----------|----------|-----------------|----------|
+| `$echo`   | *bool*   | Print or return | ✘        |
+| `$prefix` | *string* | Prefix          | ✘        |
 
 `@return void|string`
 
 ```php
 /**
- * Exemplo de uso. Dependendo da área, pode retornar:
+ * Example of use. Dependendo da área, pode retornar:
  * post_type_archive_title()
  * single_cat_title()
  * single_tag_title()
@@ -401,7 +424,7 @@ Adicione os emails dos desenvolvedores em `./core/config/app.php`
 
 ### `O::section_type()`
 
-*Retorna o tipo da página no WordPress. Ex: is_page, is_home, is_archive etc...*
+*Returns the page type in WordPress as string. Ex: is_page, is_home, is_archive etc...*
 
 `O::section_type()`
 
@@ -411,20 +434,20 @@ Adicione os emails dos desenvolvedores em `./core/config/app.php`
 
 ### `O::menu()`
 
-*Mostar menu de navegação*
+*Show navigation menu*
 
 `O::menu( $menu = null )`
 
-| Param   | Tipo     | Descrição    | Obrigatório |
-|---------|----------|--------------|-------------|
-| `$menu` | *string* | Nome do Menu | ✔           |
+| Param   | Type     | Description | Required |
+|---------|----------|-------------|----------|
+| `$menu` | *string* | Menu Name   | ✔        |
 
 `@return void`
 
 ```php
-// Exemplo de Uso
+// Example of use
 <ul>
-  \Onyx\O::menu('Menu Topo');
+  \Onyx\O::menu('Top Menu');
 </ul>
 ```
 
@@ -432,22 +455,22 @@ Adicione os emails dos desenvolvedores em `./core/config/app.php`
 
 ### `O::pagenavi()`
 
-*Onyx Pagenavi. Mostrar menu de paginação de posts/paginas*
+*Onyx Pagenavi. Show posts/pages pagination menu*
 
 `O::pagenavi( $query = null )`
 
-| Param    | Tipo     | Descrição       | Obrigatório |
-|----------|----------|-----------------|-------------|
-| `$query` | *object* | Objeto da Query | ✘           |
+| Param    | Type     | Description  | Required |
+|----------|----------|--------------|----------|
+| `$query` | *object* | Query Object | ✘        |
 
 `@return void`
 
 :::info
-Caso nenhum parâmetro de query seja passado, irá utilizar a query global do WordPress
+If no query parameters are passed, it will use the global WordPress query
 :::
 
 ```php
-// Exemplo de Uso
+// Example of use
 <div class='pagination'>
   \Onyx\O::pagenavi();
 </div>

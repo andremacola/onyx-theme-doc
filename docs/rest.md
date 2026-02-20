@@ -1,52 +1,50 @@
 ---
 id: rest
-title: API Rest Controllers
-sidebar_label: API Rest Controllers
+title: Rest API Controllers
+sidebar_label: Rest API Controllers
 ---
 
-## Introdução
+## Introduction
 
-O Onyx oferece uma simples classe `RestController` para facilitar a escrita da [REST API's](https://developer.wordpress.org/rest-api/) do WordPress. Veja mais informações na função [register_rest_route()](https://developer.wordpress.org/reference/functions/register_rest_route/) e em [custom endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/)
+Onyx offers a simple `RestController` class to facilitate the WordPress's [REST API's](https://developer.wordpress.org/rest-api/). See more information at [register_rest_route()](https://developer.wordpress.org/reference/functions/register_rest_route/) and [custom endpoints](https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/)
 
----
-
-## Funcionamento
-
-Todas os controllers para a REST API são criados dentro da pasta `./core/app/Api`, tem como seu namespace `Onyx\Controllers` e extendem a classe `Onyx\RestController`.
+All REST API controllers are created inside the `./core/app/Api` folder, with the namespace `Onyx\Controllers` and extend the `Onyx\RestController` class.
 
 ---
 
-## Registrando
+## Registering
 
-Após a criação do controller, é necessário registrá-lo em `./core/config/app.php` como no exemplo abaixo.
+After creating the controller, it is necessary to register it in `./core/config/rest.php` as in the example below.
 
 ```php
+namespace Onyx\Controllers;
+
 return [
-  \Onyx\Controllers\ExampleRestController::class,
-  \Onyx\Controllers\MyOtherRestController::class,
+  ExampleRestController::class,
+  MyOtherRestController::class,
 ];
 ```
 
 ---
 
-## Parâmetros e Métodos
+## Parameters and Methods
 
-| Variável     | Tipo           | Descrição         | Obrigatório |
-|--------------|----------------|-------------------|-------------|
-| `$namespace` | *string/array* | Namespace da Rota | ✔           |
+| Variable     | Type           | Description     | Required |
+|--------------|----------------|-----------------|----------|
+| `$namespace` | *string/array* | Route Namespace | ✔        |
 
-É obrigatório setar a propriedade `namespace` da classe assim como inicializar o método `$this->initialize()` como podemos ver no exemplo a seguir.
+It is required to set the `namespace` property as well as initialize the `$this->initialize()` method as we can see in the following example.
 
-**Métodos Helpers**
+**Helpers Methods**
 
 - [`RestController->route()`](#route)
 - [`RestController->response()`](#response)
 
 ---
 
-## Criando um REST API Controller
+## Creating a REST API Controller
 
-Neste exemplo criaremos o endpoint `/(api|wp-json)/onyx/v1/example` com os métodos POST e GET.
+In this example we will create the endpoint `/(api|wp-json)/onyx/v1/example` with the POST and GET methods.
 
 ```php
 namespace Onyx\Controllers;
@@ -95,21 +93,21 @@ class ExampleRestController extends RestController {
 
 ---
 
-## Métodos Helpers
+## Methods Helpers
 
 ### `route()`
 
-| Variável    | Tipo                   | Descrição                                   | Obrigatório |
-|-------------|------------------------|---------------------------------------------|-------------|
-| `$method`   | *WP_Rest_Server/mixed* | (GET, POST, PUT, PATCH, DELETE)             | ✔           |
-| `$route`    | *string*               | O Endpoint da rota                          | ✔           |
-| `$callback` | *callable*             | Método do controller callback para executar | ✔           |
-| `$options`  | *array*                | Opções do endpoint                          | ✘           |
-| `$override` | *bool*                 | Substituir rota existente. Padrão: falso    | ✘           |
+| Variable    | Type                   | Description                            | Required |
+|-------------|------------------------|----------------------------------------|----------|
+| `$method`   | *WP_Rest_Server/mixed* | (GET, POST, PUT, PATCH, DELETE)        | ✔        |
+| `$route`    | *string*               | Route endpoint                         | ✔        |
+| `$callback` | *callable*             | Controller callback method to execute  | ✔        |
+| `$options`  | *array*                | Endpoint options                       | ✘        |
+| `$override` | *bool*                 | Replace existing route. Default: falso | ✘        |
 
 `@return bool`  
-`@throws \Exception` Se não existir [`$namespace`](#parâmetros-e-métodos)
+`@throws \Exception` If the [`$namespace`](#parâmetros-e-métodos) does not exist
 
 ### `rest_response()`
 
-Alias para [\WP_REST_Response](https://developer.wordpress.org/reference/classes/wp_rest_response/)
+Alias for [\WP_REST_Response](https://developer.wordpress.org/reference/classes/wp_rest_response/)

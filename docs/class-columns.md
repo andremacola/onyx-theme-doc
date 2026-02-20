@@ -4,20 +4,20 @@ title: \Onyx\Columns
 sidebar_label: Columns
 ---
 
-## Propriedades
+## Properties
 
-| Variável     | Tipo    | Descrição                         |
-|--------------|---------|-----------------------------------|
-| `$items`     | *array* | Guarda todas as colunas definidas |
-| `$add`       | *array* | Colunas para adicionar            |
-| `$hide`      | *array* | Colunas remover                   |
-| `$positions` | *array* | Colunas para reposicionamento     |
-| `$populate`  | *array* | Populate callbacks                |
-| `$sortable`  | *array* | Colunas que terão o sort          |
+| Variable     | Type    | Description                     |
+|--------------|---------|---------------------------------|
+| `$items`     | *array* | Saves all defined columns       |
+| `$add`       | *array* | Columns to add                  |
+| `$hide`      | *array* | Columns remove                  |
+| `$positions` | *array* | Repositioning columns           |
+| `$populate`  | *array* | Populate callbacks              |
+| `$sortable`  | *array* | Columns that will have the sort |
 
 ---
 
-## Métodos
+## Methods
 
 ### set()
 ### add()

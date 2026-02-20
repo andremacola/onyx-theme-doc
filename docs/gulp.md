@@ -1,20 +1,20 @@
 ---
 id: gulp
-title: Configuração do Gulp e LiveReload
-sidebar_label: Configuração
+title: Configuring Gulp and LiveReload
+sidebar_label: Setup
 ---
 
-Para o desenvolvimento o [Onyx Theme](https://github.com/andremacola/onyx-theme) utiliza o [Gulp](https://gulpjs.com/) para automação de javascripts e scss. Junto com o Gulp, utilizamos o [Live Reload](https://github.com/livereload/livereload-js) para fazer a sincronia de refresh com o navegador. Em nossos testes e configurações, tivemos uma maior performance/resposta e menos latência em comparação com o *Browser Sync*
+[Onyx Theme](https://github.com/andremacola/onyx-theme) uses [Gulp](https://gulpjs.com/) to automate javascripts and scss. We use [Live Reload](https://github.com/livereload/livereload-js) to synchronize the refresh with the browser. In our tests and configurations, we had higher performance / response and less latency compared to *Browser Sync*
 
-## Comandos Gulp
+## Gulp Commands
 
-|Commandos         | Funcionalidades                            |
+|Commands         | Functionalities                            |
 |------------------|--------------------------------------------|
-| *yarn serve*       | Escutar e processar os arquivos em cada alteração
-| *yarn serve:prod*  | O mesmo que o comando `serve` porém utilizando ambiente de produção
-| *yarn build*       | Gerar o build para produção
+| *yarn serve*       | Listen and process the files with each change
+| *yarn serve:prod*  | The same as the command `serves` but using the production environment
+| *yarn build*       | Generate the build for production
 
-***OBS***: É necessário um domínio `.local` para funcionar o Live Reload.
+***NOTE***: A `.local` domain is required to run Live Reload.
 
 ---
 
@@ -22,16 +22,16 @@ Para o desenvolvimento o [Onyx Theme](https://github.com/andremacola/onyx-theme)
 
 <div class='embed-container'><iframe src='https://www.youtube.com/embed/LaJSyYPDyBQ?rel=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-Configure as variáveis no arquivo `.env` localizado na raiz da pasta do tema.
+Configure the variables in the `.env` file located at the root of the theme folder.
 
 :::info
-Para o Live Reload funcionar, o domínio de desenvolvimento ***obrigatoriamente*** precisará ser ***.local***
+For Live Reload to work, the development domain ***must be `.local`***
 :::
 
-Após configurado, caso esteja com o projeto aberto no navegador, atualize a página para carregar o Live Reload pela primeira vez e teste.
+Once configured, if you have the project open in the browser, refresh the page to load the Live Reload for the first time and test.
 
-## Arquivos estáticos
+## Static Files
 
-Todos os arquivos fontes tanto do javascript quanto do sass estão localizados na pasta `src/`. Os arquivos compilados estarão em suas respectivas pastas localizadas em `assets/`
+All source files for both javascript and sass are located in the `src /` folder. The compiled files will be in their respective folders located in `assets /`
 
-Nesta versão o ***Onyx Theme*** não faz tratamento de imagens.
+In this version ***Onyx Theme*** does not do image processing.

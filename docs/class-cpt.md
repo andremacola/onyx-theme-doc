@@ -4,26 +4,26 @@ title: \Onyx\Cpt
 sidebar_label: Cpt
 ---
 
-## Propriedades
+## Properties
 
-| Variável      | Tipo     | Descrição                                      |
-|---------------|----------|------------------------------------------------|
-| $key          | *string* | Guarda chave do post type                      |
-| $names        | *array*  | Recebe nomes do post type (name, plural, slug) |
-| $name         | *string* | Nome do post type                              |
-| $plural       | *string* | Nome do post type no plural                    |
-| $slug         | *string* | Slug do post type                              |
-| $arguments    | *array*  | Argumentos (options) do post type              |
-| $labels       | *array*  | Labels do post type                            |
-| $capability   | *string* | WP Capability para o post type                 |
-| $capabilities | *array*  | WP Capabilities para o post type               |
-| $icon         | *string* | Ícone do post type                             |
-| $columns      | *array*  | Colunas do post type                           |
-| $filters      | *array*  | Filtros de select do post type                 |
+| Variable      | Type     | Description                                   |
+|---------------|----------|-----------------------------------------------|
+| $key          | *string* | Post Type key                                 |
+| $names        | *array*  | Receives post type names (name, plural, slug) |
+| $name         | *string* | Post type name                                |
+| $plural       | *string* | Plural post type name                         |
+| $slug         | *string* | Post type slug                                |
+| $arguments    | *array*  | Post type arguments (options)                 |
+| $labels       | *array*  | Post Type labels                              |
+| $capability   | *string* | Post Type WP Capability                       |
+| $capabilities | *array*  | Post Type WP Capabilities                     |
+| $icon         | *string* | Post Type icon                                |
+| $columns      | *array*  | Post Type custom columns                      |
+| $filters      | *array*  | Select filters                                |
 
 ---
 
-## Métodos
+## Methods
 
 ### __construct()
 ### names()
@@ -36,8 +36,6 @@ sidebar_label: Cpt
 ### validate_name_params()
 ### create_labels()
 ### create_cpt_arguments()
-### add_action
-### add_filter
 ### register_cpt()
 ### register()
 ### columns()

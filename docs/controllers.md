@@ -1,25 +1,25 @@
 ---
 id: controllers
-title: Controllers e Views
+title: Controllers and Views
 sidebar_label: Controllers
 ---
 
-## Introdução
+## Introduction
 
-Seguindo o padrão de ***Hierarquia de templates*** do próprio WordPress que [pode ser vista aqui](https://wphierarchy.com/), o Onyx Theme carrega seus controllers de acordo com a existencia desses arquivos seguido do *sufixo* `Controller` dentro da pasta `./core/app/Controllers`.
+Following the pattern of ***Hierarchy of templates*** from WordPress itself [can be seen here](https://wphierarchy.com/), Onyx Theme loads its controllers according to the existence of these files followed by *suffix* `Controller` inside the `./core/app/Controllers` folder.
 
-Os controllers são responsáveis por fazer a consulta/queries no banco e carregar as [Views](views). Você pode ver os **exemplos práticos** nos controllers que acompanham o tema.
+The controllers are responsible for making the query / queries and loading the [Views](views). You can see the **practical examples** on the controllers that accompany the theme.
 
 :::info
-A não existência de nenhum controller em cima da **hierarquia**, os templates padrões do WordPress são carregados normalmente.
+In the absence of any controller above the **hierarchy**, the standard WordPress templates are loaded normally.
 :::
 
-Por padrão o tema vem com os seguintes controllers no padrão **PSR4**: 
+By default the theme comes with the following controllers in the **PSR4** standard:   
 
 - ./core/app/Controllers/
   - **ArchiveController.php**  
   - **CategoryController.php**  
-  - **Error404Controller.php**: <sup>**Exclusivamente o controller do 404 foge do padrão**</sup>
+  - **Error404Controller.php**: <sup>**Exclusively the 404 controller ignores the standard**</sup>
   - **HomeController.php**  
   - **PageController.php**  
   - **SearchController.php**  
@@ -27,13 +27,13 @@ Por padrão o tema vem com os seguintes controllers no padrão **PSR4**:
 
 ---
 
-## Nomeação de arquivos
+## File naming
 
-Segue uma tabela com exemplos de nomeação dos controllers carregados em ordem.
+Following is a table with examples of naming the controllers loaded in order.
 
-Os arquivos dos controllers são baseados nos templates da hierarquia do WordPress e transformados de acordo com o [PSR4](https://www.php-fig.org/psr/psr-4/).
+The controller files are based on the WordPress hierarchy templates and transformed according to [PSR4](https://www.php-fig.org/psr/psr-4/).
 
-| Tipo       | Arquivos                                                                                                                                             |
+| Type       | File(s)                                                                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Home       | `HomeController.php` <br /> `IndexController.php`                                                                                                    |
 | Single     | `Single{$PostType}{$Slug}Controller.php` <br /> `Single{$PostType}Controller.php` <br /> `SingleController.php`                                      |
@@ -45,20 +45,20 @@ Os arquivos dos controllers são baseados nos templates da hierarquia do WordPre
 | CPT        | `Archive{$PostType}Controller.php` <br /> `ArchiveController.php` <br /> `IndexController.php`                                                       |
 
 :::note
-**Dica:** Você poderá utilizar um **[`var_dump( O::get_hierarchy() );`](helpers/#oget_hierarchy)** para verificar os templates da página atual.
+**Tip:** You can use **[`var_dump( O::get_hierarchy() );`](helpers/#oget_hierarchy)** to check the templates of the current page.
 :::
 
-Para mais informações sobre o funcionamento do padrão de hierarquia do WordPress visite [Page-template-files](https://developer.wordpress.org/themes/template-files-section/Page-template-files/) e [wphierarchy](https://wphierarchy.com/).
+For more information on how the WordPress hierarchy pattern works, visit [page-template-files](https://developer.wordpress.org/themes/template-files-section/page-template-files/) and [wphierarchy](https://wphierarchy.com/).
 
 ---
 
-## Nomeação das classes
+## Class naming
 
-As classes dos controllers são nomeadas de acordo com o [PSR4](https://www.php-fig.org/psr/psr-4/) relacionadas aos arquivos de controllers carregados.
+Controller classes are named according to [PSR4](https://www.php-fig.org/psr/psr-4/) related to the loaded controller files.
 
-Segue uma tabela com exemplos de nomeação das classes.
+A table with examples of class naming follows.
 
-| Arquivo                   | Classe               |
+| File                      | Class                |
 |---------------------------|----------------------|
 | HomeController.php        | HomeController       |
 | SingleController.php      | SingleController     |
@@ -69,9 +69,9 @@ Segue uma tabela com exemplos de nomeação das classes.
 
 ---
 
-## Criando um controller
+## Creating a controller
 
-Todos os controllers devem extender a classe principal `\Onyx\Controller` e executar o método `initialize()`.
+All controllers must extend the main `\Onyx\Controller` class and execute the `initialize()` method.
 
 ```php
 namespace Onyx\Controllers;
@@ -81,9 +81,9 @@ use Onyx\Controller;
 class HomeController extends Controller  {
 
   public function initialize() {
-    // realizar carregamento de templates
-    // realizar carregamento do contexto do Timber
-    // carregar métodos desejados
+    // load templates
+    // load Timber context
+    // load desired methods
   }
 
 }
@@ -91,11 +91,11 @@ class HomeController extends Controller  {
 
 ---
 
-## Views: Setando os Templates
+## Views: Setting the Templates
 
-Existem 3 maneiras básicas de se chamar as views. Todos os arquivos obrigatoriamente devem ficar na pasta `./views/`.
+There are 3 basic ways to call views. All files must be in the `./views/` folder.
 
-Os templates são carregados por ordem de existência na hierarquia.
+Templates are loaded in order of existence in the hierarchy.
 
 ```php
 namespace Onyx\Controllers;
@@ -108,8 +108,8 @@ class PageProductController extends Controller  {
 
     /*
     |--------------------------------------------------------------------------
-    | Método 1: chamando um dos métodos da classe Controller
-    | Neste caso o Onyx carregará as views de acordo com a hierarquia de templates do WordPress
+    | Method 1: calling one of the Controller class methods
+    | In this case Onyx will load the views according to the WordPress template hierarchy
     | https://developer.wordpress.org/themes/basics/template-hierarchy/
     |--------------------------------------------------------------------------
     */
@@ -120,28 +120,28 @@ class PageProductController extends Controller  {
 
     /*
     |--------------------------------------------------------------------------
-    | Método 2: Setando os templates diretamente na propriedade $templates
-    | com o método `set_templates()`.
+    | Method 2: Setting the templates directly in the $templates
+    | with the `set_templates()` method.
     |--------------------------------------------------------------------------
     */
     $this->set_templates( [ 'pages/index.twig', 'pages/home.twig' ] );
 
     /*
     |--------------------------------------------------------------------------
-    | Método 3: Criando um método com uma lógica própria para alterar
-    | a propriedade $templates da classe.
+    | Method 3: Creating a method with its own logic to change
+    | the $templates property of the class.
     |--------------------------------------------------------------------------
     */
     $post = $this->get_post();
-    $this->set_context( 'post', $this->get_post() ); // Veja mais a seguir
+    $this->set_context( 'post', $this->get_post() ); // See more below
     $this->set_my_own_template_logic( $post );
 
   }
 
   /**
-   * Setar templates personalizados
+   * Set custom templates
    *
-   * @param \Timber\Post $post Objeto do Post
+   * @param \Timber\Post $post Post Object
    * @return void
   */
   protected function set_my_own_template_logic( $post ) {
@@ -158,9 +158,9 @@ class PageProductController extends Controller  {
 
 ---
 
-## Views: Cancelar renderização
+## Views: Cancel rendering
 
-Por padrão os Controllers no *Onyx Theme* renderiza automaticamente as views. Caso deseje um controle maior sobre elas, podemos cancelar o método `render_view()` passando um método no `initialize()`.
+By default Controllers in *Onyx Theme* automatically render views. If you want more control over them, we can cancel the `render_view ()` method by passing a method in `initialize ()`.
 
 ```php
 namespace Onyx\Controllers;
@@ -173,10 +173,10 @@ class SingleController extends Controller  {
     $this->set_page_templates( 'page' );
     $this->set_context( 'post', $this->get_post() );
 
-    // cancelar renderização
+    // cancel rendering
     $this->no_render();
 
-    // renderizar manualmente
+    // render manually
     Timber::render( $this->templates, $this->context );
   }
 
@@ -185,16 +185,16 @@ class SingleController extends Controller  {
 
 ---
 
-## Contexto: Queries e Consultas
+## Context: Queries
 
-As views do Timber\Twig trabalham recebendo as [variáveis de contexto](https://timber.github.io/docs/v2/guides/context/) para renderizar as informações na tela.
+Timber\Twig views work by receiving [context variables](https://timber.github.io/docs/v2/guides/context/) to render the information on the screen.
 
-Você pode passar uma ou várias queries/consultas para o contexto caso necessário e também utilizar o hook [`timber/context`](https://timber.github.io/docs/v2/hooks/filters/#timber/context) parra repassar contextos globais da aplicação.
+You can pass one or several queries to the context if necessary and also use the hook [`timber/context`](https://timber.github.io/docs/v2/hooks/filters/#timber/context) to review global application contexts.
 
-Além das queries, você pode passar qualquer tipo de informação junto com o `contexto` para o *Timber*. Como um campo personalizado com alguma informação importante.
+In addition to queries, you can pass any type of information along with the `context` to *Timber*. As a custom field with some important information.
 
 :::info
-Para saber como utilizar o ***Twig***, visite a documentação do [Timber](https://timber.github.io/docs/v2/getting-started/a-post-archive/) ou do [Twig](https://twig.symfony.com/) e veja os exemplos que acompanham o **Onyx Theme**
+To learn how to use ***Twig***, visit the [Timber](https://timber.github.io/docs/v2/getting-started/a-post-archive/) or [Twig ](https://twig.symfony.com/) documentation and see the examples that come with **Onyx Theme**
 :::
 
 ```php
@@ -209,21 +209,21 @@ class ArchiveProductController extends Controller  {
 
     /*
     |--------------------------------------------------------------------------
-    | Escolher templates
+    | Choose templates
     |--------------------------------------------------------------------------
     */
     $this->templates = [ 'pages/index.twig', 'pages/home.twig' ];
 
     /*
     |--------------------------------------------------------------------------
-    | Capturar e setar contexto da query/loop principal
+    | Capture and set main query/loop context
     |--------------------------------------------------------------------------
     */
     $this->context['posts'] = $this->get_posts();
 
     /*
     |--------------------------------------------------------------------------
-    | Consultar e setar contexto das queries secundárias
+    | Consult and set context of secondary queries
     |--------------------------------------------------------------------------
     */
     $this->context['featured']    = $this->get_featured_products();
@@ -231,7 +231,7 @@ class ArchiveProductController extends Controller  {
 
     /*
     |--------------------------------------------------------------------------
-    | Mandar um custom field junto com o contexto usando o ACF
+    | Send a custom field along with the context using ACF
     |--------------------------------------------------------------------------
     */
     $this->context['promotion_banner'] = get_field('promotion_banner', 'options');
@@ -239,7 +239,7 @@ class ArchiveProductController extends Controller  {
   }
 
   /**
-   * Pegar produtos em destaque
+   * Get featured products
    *
    * @return object
   */
@@ -252,7 +252,7 @@ class ArchiveProductController extends Controller  {
   }
 
   /**
-   * Pegar produtos em promocão
+   * Get promotional products
    *
    * @return object
   */
@@ -268,5 +268,5 @@ class ArchiveProductController extends Controller  {
 ```
 
 :::note
-Neste exemplo, não utilizamos os helpers `set_context()`, `set_templates()` ou `set_{type}_templates()`. Injetamos os templates e contextos ***diretamente na propriedade $templates***.
+In this example, we do not use the helpers `set_context ()`, `set_templates ()` or `set_{type} _templates ()` and inject the templates and contexts ***directly into the $templates property***.
 :::

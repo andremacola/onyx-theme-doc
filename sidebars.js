@@ -6,14 +6,14 @@ module.exports = {
      */
     {
       type: 'category',
-      label: 'Começando',
+      label: 'Get started',
       collapsed: false,
       items: [
         'introduction',
         'install',
         {
           type: 'category',
-          label: 'Gulp e LiveReload',
+          label: 'Gulp and LiveReload',
           collapsed: false,
           items: ['gulp', 'javascripts', 'styles'],
           
@@ -26,10 +26,9 @@ module.exports = {
      */
     {
       type: 'category',
-      label: 'Configurações',
+      label: 'Configurations',
       collapsed: false,
       items: [
-        'environment',
         'app',
         'assets',
         'hooks',
@@ -47,7 +46,7 @@ module.exports = {
      */
     {
       type: 'category',
-      label: 'Guias',
+      label: 'Guides',
       collapsed: false,
       items: [
         'controllers',
@@ -63,7 +62,7 @@ module.exports = {
      */
     {
       type: 'category',
-      label: 'Referências',
+      label: 'References',
       collapsed: false,
       items: [
         'class-boot',

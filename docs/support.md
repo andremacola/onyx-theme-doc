@@ -1,10 +1,10 @@
 ---
 id: support
-title: Recursos de Suporte do Tema
-sidebar_label: Recursos
+title: Theme Features
+sidebar_label: Theme Features
 ---
 
-Adicionar ou remover recursos do WordPress no arquivo `./core/config/support.php`. Mais informações em [add_theme_support](https://developer.wordpress.org/reference/functions/add_theme_support/).
+Use `./core/config/support.php` to add or remove WordPress theme feature. More informantion: [add_theme_support](https://developer.wordpress.org/reference/functions/add_theme_support/).
 
 ```php
 return [

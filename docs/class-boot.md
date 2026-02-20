@@ -4,15 +4,15 @@ title: \Onyx\Boot
 sidebar_label: Boot
 ---
 
-## Propriedades
+## Properties
 
-| Variável     | Tipo    | Descrição                                                 |
-|--------------|---------|-----------------------------------------------------------|
-| `$templates` | *array* | Guarda hierarquia de templates requisitada pelo WordPress |
+| Variable     | Type    | Description                                     |
+|--------------|---------|-------------------------------------------------|
+| `$templates` | *array* | Keeps template hierarchy requested by WordPress |
 
 ---
 
-## Métodos
+## Methods
 
 ### __construct()
 ### get_templates()

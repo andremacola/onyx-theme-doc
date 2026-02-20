@@ -1,8 +1,8 @@
 module.exports = {
   title: 'Onyx Theme',
-  tagline: 'Documentação para o Tema Onyx do WordPress',
+  tagline: 'Onyx Theme for WordPress Documentation',
   url: 'https://andremacola.github.io',
-  baseUrl: '/onyx-theme-doc/',
+  baseUrl: '/onyx-theme-doc/en/',
   favicon: 'img/favicon.ico',
   organizationName: 'andremacola', // Usually your GitHub org/user name.
   projectName: 'onyx-theme-doc', // Usually your repo name.
@@ -25,7 +25,7 @@ module.exports = {
         alt: 'Onyx Theme',
         src: 'img/logo-icon.svg',
       },
-      items: [
+      links: [
         {
           to: 'docs/',
           activeBasePath: 'docs',
@@ -38,8 +38,13 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://andremacola.github.io/onyx-theme-doc/en/',
-          label: 'English',
+          href: 'https://andremacola.github.io/onyx-theme-doc/blog/',
+          label: 'Blog',
+          position: 'left'
+        },
+        {
+          href: 'https://andremacola.github.io/onyx-theme-doc',
+          label: 'Portuguese',
           position: 'right',
         },
         {
@@ -56,17 +61,17 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Instalação',
+              label: 'Instalation',
               to: 'docs/',
             },
             {
-              label: 'Configuração',
+              label: 'Configuration',
               to: 'docs/app/',
             },
           ],
         },
         {
-          title: 'Comunidade',
+          title: 'Community',
           items: [
             {
               label: 'Stack Overflow',
@@ -81,6 +86,10 @@ module.exports = {
         {
           title: 'Mais',
           items: [
+            {
+              label: 'Blog',
+              href: 'https://andremacola.github.io/onyx-theme-doc/blog/',
+            },
             {
               label: 'GitHub',
               href: 'https://github.com/andremacola',
@@ -97,6 +106,7 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
+          homePageId: 'introduction',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:

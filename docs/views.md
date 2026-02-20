@@ -4,4 +4,4 @@ title: Views - Twig Templates
 sidebar_label: Templates
 ---
 
-O Onyx Theme utiliza o [Timber/Twig](https://www.upstatement.com/timber/) para suas Views. A documentação completa pode ser vista aqui: [https://timber.github.io/docs/v2](https://timber.github.io/docs/v2)
+Onyx Theme uses [Timber/Twig](https://www.upstatement.com/timber/) for its Views. The complete documentation can be seen here: [https://timber.github.io/docs/v2](https://timber.github.io/docs/v2)

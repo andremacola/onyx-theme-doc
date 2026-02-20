@@ -1,16 +1,16 @@
 ---
 id: images
-title: Customização das Thumbnails
-sidebar_label: Imagens
+title: Thumbnails Customization
+sidebar_label: Images
 ---
 
-Utilize `./core/config/images.php` para registrar imagens/thumbnails com tamanhos personalizados.
+Use `./core/config/images.php` to register custom fizes for images/thumbnails.
 
-| Param     | Tipo         | Descrição         | Obrigatório |
-|-----------|--------------|-------------------|-------------|
-| `$width`  | *int*        | Largura da Imagem | ✔           |
-| `$height` | *int*        | Altura da Imagem  | ✘           |
-| `$crop`   | *bool/array* | Crop da Imagem    | ✘           |
+| Param     | Type         | Description  | Required |
+|-----------|--------------|--------------|----------|
+| `$width`  | *int*        | Image width  | ✔        |
+| `$height` | *int*        | Image height | ✘        |
+| `$crop`   | *bool/array* | Image crop   | ✘        |
 
 ```php
 return [
@@ -18,8 +18,8 @@ return [
   'My Other Size'  => [ 500, 500, true ],
 ];
 
-// carregue a imagem normalmente
+// load the image normally
 the_post_thumbnail('My Custom Size');
 ```
 
-Mais informações em [add_image_size](https://developer.wordpress.org/reference/functions/add_image_size/).
+More info: [add_image_size](https://developer.wordpress.org/reference/functions/add_image_size/).

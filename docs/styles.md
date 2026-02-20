@@ -1,27 +1,26 @@
 ---
 id: styles
-title: Estilos
-sidebar_label: Estilos
+title: Styles
+sidebar_label: Styles
 ---
 
-O [Onyx Theme](https://github.com/andremacola/onyx-theme) utiliza o [SASS](https://sass-lang.com/) para desenvolvimento do CSS.
+The [Onyx Theme](https://github.com/andremacola/onyx-theme) uses [SASS](https://sass-lang.com/) for CSS development.
 
-Os arquivos fontes estão localizados na pasta `src/sass` e já conta com uma estrutura inicial para criação que você pode alterar conforme as suas necessidades.
+The source files are located in the `src/scss` folder and already have an initial structure for creation that you can change according to your needs.
 
-Para carregar estilos provenientes da pasta `node_modules`, você não precisa setar o caminho completo.
+To load styles from the `node_modules` folder, you do not need to set the full path.
 
-Veja o exemplo a seguir:
+See the following example:
 
 ```scss
-// carregar estilo do arquivo
+// load style from file
 // ./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css
 @import '@fancyapps/fancybox/dist/jquery.fancybox.min';
 
-// carregar estilo local
+// load local style
 @import 'components/forms'
 ```
 
-Para carregar arquivos externos ou adicionar uma nova tag `<link rel='stylesheet' />`  
-verifique a seção de **Configurações** - [Assets](assets) da documentação.
+To load external files or add a new tag `<link rel='stylesheet' />`  check the **[Assets](assets)** doc section.
 
 ---

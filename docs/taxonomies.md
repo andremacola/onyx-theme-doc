@@ -1,39 +1,39 @@
 ---
 id: taxonomies
-title: Taxonomias Personalizadas
-sidebar_label: Taxonomias
+title: Custom Taxonomies
+sidebar_label: Taxonomies
 ---
 
-## Parâmetros
+## Parameters
 
-O `name(s)` da taxonomia podendo ser uma *string* como podemos ver no [*Exemplo 1*](#criando-uma-taxonomia) ou um *array* como no [*Exemplo 2*](#criando-uma-taxonomia). O Onyx vai extrair automaticamente `slug`, `labels`, `options` caso não sejam fornecidos assim como tentará aplicar o *plural* nas labels necessárias.
+The `name (s)` of the taxonomy can be a *string* as we can see in [*Example 1*](#creating-a-taxonomy) or an *array* as in [*Example 2*](#creating-a-taxonomy). Onyx will automatically extract `slug`, `labels`, `options` if they are not provided as well as try to apply *plural* to the necessary labels.
 
 :::caution
-Caso **não fornecido**, o parâmetro `slug` será utilizado para criação do post type e é ele que deverá ser utilizado para queries e relacionamentos. Por padrão o `slug` é extraído do valor `name` transformado para o plural.
+If **not provided**, the parameter `slug` will be used to create the post type and it is the one that should be used for queries and relationships. By default, `slug` is extracted from the value` name` transformed to the plural.
 
-*Ex: 'Produto' terá como plural 'Produtos' e slug 'produtos'.*
+*Ex: 'Custom Product' plural will be 'Custom Products' and slug 'custom-products'.*
 :::
 
-| Param     | Tipo           | Descrição                     | Obrigatório |
-|-----------|----------------|-------------------------------|-------------|
-| `name(s)` | *string/array* | Nome da Taxonomia             | ✔           |
-| `types`   | *array*        | Post Types relacionados       | ✔           |
-| `options` | *array*        | Argumentos para funcionamento | ✘           |
-| `labels`  | *array*        | Labels customizadas           | ✘           |
+| Param     | Type           | Description             | Required |
+|-----------|----------------|-------------------------|----------|
+| `name(s)` | *string/array* | Taxonomy name           | ✔        |
+| `types`   | *array*        | Related Post Types      | ✔        |
+| `options` | *array*        | Arguments for operation | ✘        |
+| `labels`  | *array*        | Custom labels           | ✘        |
 
 :::info
-Para saber as opções das `labels` e `options`, visite a documentação do WordPress [register_taxonomy()](https://codex.wordpress.org/Function_Reference/register_taxonomy)
+For options on `labels` and` options`, visit the WordPress documentation [register_taxonomy()](https://codex.wordpress.org/Function_Reference/register_taxonomy)
 :::
 
 :::info
-Ao adicionar parâmetros como `labels` ou `options`, você não precisa incluir todas as opções. Somente os parâmetros que você determinar serão substituídos no modelo.
+When adding parameters like `labels` or` options`, you do not need to include all options. Only the parameters you determine will be replaced in the model.
 :::
 
 ---
 
-## Criando uma Taxonomia
+## Creating a Taxonomy
 
-Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Taxonomy()`](#instanciando-uma-taxonomia).
+Using this method, you **don't need** to instantiate the [`\Onyx\Taxonomy()`](#instantiating-a-taxonomy) class.
 
 ```php
   /*
@@ -70,9 +70,9 @@ Utilizando este método, você **não precisa** instanciar a classe [`\Onyx\Taxo
 
 ---
 
-## Instanciando uma Taxonomia
+## Instantiating a Taxonomy
 
-Além de poder criar uma taxonomia utilizando o registro no arquivo `./core/config/taxonomies.php`, você pode instanciar um objeto e criar manualmente sua Taxonomia usando a classe [`\Onyx\Taxonomy`](class-taxonomy)
+In addition to being able to create a taxonomy using the register in the `./core/config/taxonomies.php` file, you can instantiate an object and manually create its Taxonomy using the class [`\Onyx\Taxonomy`](class-taxonomy)
 
 ```php
   $tax = new \Onyx\Taxonomy();

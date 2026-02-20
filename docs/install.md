@@ -1,16 +1,16 @@
 ---
 id: install
-title: Instalação
-sidebar_label: Instalação
+title: Installation
+sidebar_label: Installation
 ---
 
-Para Instalar o [Onyx Theme](https://github.com/andremacola/onyx-theme) baixe a versão desejada na área de [releases](https://github.com/andremacola/onyx-theme/releases) do Github ou diretamente da [branch principal.](https://github.com/andremacola/onyx-theme/zipball/master)
+To install [Onyx Theme](https://github.com/andremacola/onyx-theme) download the desired version in the [releases](https://github.com/andremacola/onyx-theme/releases) Github area or directly from [main branch.](Https://github.com/andremacola/onyx-theme/zipball/master)
 
 ---
 
-## Dependências
+## Dependencies
 
-Verifique se todas as dependências foram instaladas antes de prosseguir:
+Verify that all dependencies have been installed before proceeding:
 
 > - [WordPress](https://wordpress.org/) >= 4.7
 > - [PHP](https://www.php.net/manual/en/install.php) >= 7.2
@@ -20,19 +20,19 @@ Verifique se todas as dependências foram instaladas antes de prosseguir:
 
 ---
 
-## Passo a Passo
+## Step by step
 
-***1 |*** Extraia os arquios do tema na pasta `themes` do seu WordPress  
-***2 |*** Em seu terminal execute os seguinte comandos:  
+***1 |*** Extract the theme files in your WordPress `themes` folder  
+***2 |*** In terminal, execute the following commands:  
 
 ```bash
-# themes/onyx-theme/
+# @ themes/onyx-theme/
 composer install
 yarn install
 ```
-***3 |*** Renomeie o arquivo `.env.example` para `.env` e atualize as informações de desenvolvimento local caso necessário  
-***4 |*** Ative o tema em seu painel do WordPress  
-***5 |*** Inicie o desenvolvimento rodando o comando abaixo:  
+***3 |*** Rename the file `.env.example` to` .env` and update the development parameters if necessary  
+***4 |*** Activate the theme in your WordPress dashboard  
+***5 |*** Start the development by running the command below:  
 
 ```bash
 yarn serve

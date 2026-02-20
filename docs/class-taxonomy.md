@@ -4,22 +4,22 @@ title: \Onyx\Taxonomy
 sidebar_label: Taxonomy
 ---
 
-## Propriedades
+## Properties
 
-| Variável   | Tipo     | Descrição                                      |
-|------------|----------|------------------------------------------------|
-| $key       | *string* | Guarda chave da taxonomia                      |
-| $names     | *array*  | Recebe nomes da taxonomia (name, plural, slug) |
-| $name      | *string* | Nome da taxonomia                              |
-| $plural    | *string* | Nome da taxonomia no plural                    |
-| $slug      | *string* | Slug da taxonomia                              |
-| $arguments | *array*  | Argumentos (options) da taxonomia              |
-| $labels    | *array*  | Labels da taxonomia                            |
-| $cpts      | *array*  | Post types relacionados                        |
+| Variable   | Type     | Description                                  |
+|------------|----------|----------------------------------------------|
+| $key       | *string* | Key taxonomy guard                           |
+| $names     | *array*  | Receives taxonomy names (name, plural, slug) |
+| $name      | *string* | Taxonomy name                                |
+| $plural    | *string* | Plural taxonomy name                         |
+| $slug      | *string* | Taxonomy Slug                                |
+| $arguments | *array*  | Taxonomy arguments (options)                 |
+| $labels    | *array*  | Taxonomy labels                              |
+| $cpts      | *array*  | Related post types                           |
 
 ---
 
-## Métodos
+## Methods
 
 ### __construct()
 ### names()

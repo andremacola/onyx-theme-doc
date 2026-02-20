@@ -9,32 +9,30 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Fácil de Usar</>,
+    title: <>Easy to Use</>,
     imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Indicado tanto para iniciantes ou experientes.
-        Com uma documentação bem clara e explicativa, boa para quem está começando seu primeiro projeto.
+        For both beginners and experienced.
+        With very clear and explanatory documentation, good for those who are starting their first project.
       </>
     ),
   },
   {
-    title: <>Necessidades Reais</>,
+    title: <>Real Needs</>,
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Desenvolvido para suprir as necessidades desde sites básicos
-        quanto de grandes portais ou até mesmo apps baseados no core do WordPress.
+        Developed to meet the needs of basic websites as well as large portals or even apps based on the core of WordPress.
       </>
     ),
   },
   {
-    title: <>Cases de Sucesso</>,
+    title: <>Success Stories</>,
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        O Onyx Theme já é utilizado por diversos clientes, sendo alguns com milhões de visitas diárias
-        e dezenas de jornalistas e editores trabalhando utilizando suas funcionalidades.
+        The Onyx Theme is already used by several clients, some with millions of daily visits and dozens of journalists and editors working using its features.
       </>
     ),
   },
@@ -74,7 +72,9 @@ function Home() {
         <div className="container">
           <OnyxLogo />
           {/* <h1 className="hero__title">{siteConfig.title}</h1> */}
-          <p className="hero__subtitle">Documentação para o <strong>Tema Onyx</strong> do WordPress</p>
+          <p className="hero__subtitle">
+            <strong>Onyx Theme</strong> for WordPress Documentation
+          </p>
           <div className={styles.buttons}>
             <Link
               className={clsx(
@@ -82,7 +82,7 @@ function Home() {
                 styles.getStarted,
               )}
               to={useBaseUrl('docs/')}>
-              Iniciar
+              Get started
             </Link>
           </div>
         </div>

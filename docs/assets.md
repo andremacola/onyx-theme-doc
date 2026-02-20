@@ -1,29 +1,21 @@
 ---
 id: assets
-title: Registro de Assets
+title: Register Assets
 sidebar_label: Assets
 ---
 
-Para adicionar Javascripts e Estilos utilize este arquivo `./core/config/assets.php`. É recomendável gerenciar suas dependencias pelo [Gulp](gulp) e não pelas funções *wp\_enqueue\_* do WordPress
-
-Segue os princípios das funçõs [wp_enqueue_style](https://developer.wordpress.org/reference/functions/wp_enqueue_style/), [wp_enqueue_script](https://developer.wordpress.org/reference/functions/wp_enqueue_script/) e do hook [wp_enqueue_scripts](https://developer.wordpress.org/reference/hooks/wp_enqueue_scripts/)
+To add Javascripts and Styles, use this file `./core/config/assets.php`. It is recommended to manage your dependencies through [Gulp](gulp) and not by the WordPress functions *wp\_enqueue\_*
 
 ---
 
-## Adicionar CSS
+## Add CSS
 
-O *Array* de estilos carrega na ordem adicionada e recebe alguns parâmetros:
+The styles *Array* loads in the added order and receives 2 (two) parameters:
 
-`$handler => [ $src = '', $home = false, $deps = [], $ver = false, $media = 'all' ]`
-
-| Param      | Tipo                 | Descrição                    | Obrigatório |
-|------------|----------------------|------------------------------|-------------|
-| `$handler` | *string*             | Nome único do estilo         | ✔           |
-| `$src`     | *string*             | Caminho ou URL do css        | ✔           |
-| `$home`    | *bool*               | Aparecer **somente** na Home | ✘           |
-| `$deps`    | *array*              | Dependências                 | ✘           |
-| `$ver`     | *string\|bool\|null* | Versão                       | ✘           |
-| `$media`   | *string*             | 'all', 'print' e 'screen'    | ✘           |
+| Param   | Type     | Description         | Required |
+|---------|----------|---------------------|----------|
+| `$css`  | *string* | CSS path or URL     | ✔        |
+| `$home` | *bool*   | Appear only on Home | ✘        |
 
 ```php {9}
 /*
@@ -32,29 +24,23 @@ O *Array* de estilos carrega na ordem adicionada e recebe alguns parâmetros:
 |--------------------------------------------------------------------------
 */
 'css' => [
-  'main-style'   => [ 'assets/css/main.css' ],
-  'home-style'   => [ 'assets/css/home.css', true ],
-  'custom-style' => [ 'assets/css/myCustomStyle.css'],
-  'select2'      => [ 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css' ],
+  [ 'assets/css/main.css' ],
+  [ 'assets/css/home.css', true ],
+  [ 'assets/css/myCustomStyle.css'],
+  [ 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css' ],
 ],
 ```
 
 ---
 
-## Adicionar Javascript
+## Add Javascript
 
-O *Array* de javascript carrega na ordem adicionada e recebe alguns parâmetros:
+The scripts *Array* loads in the added order and receives 2 (two) parameters:
 
-`$handler => [ $src = '', $home = false, $deps = [], $ver = false, $in_footer = true ]`
-
-| Param        | Tipo                 | Descrição                    | Obrigatório |
-|--------------|----------------------|------------------------------|-------------|
-| `$handler`   | *string*             | Nome único do estilo         | ✔           |
-| `$src`       | *string*             | Caminho ou URL do js         | ✔           |
-| `$home`      | *bool*               | Aparecer **somente** na Home | ✘           |
-| `$deps`      | *array*              | Dependências                 | ✘           |
-| `$ver`       | *string\|bool\|null* | Versão                       | ✘           |
-| `$in_footer` | *bool*               | Aparecer no footer ou header | ✘           |
+| Param   | Type     | Description            | Required |
+|---------|----------|------------------------|----------|
+| `$js`   | *string* | Javascript path or URL | ✔        |
+| `$home` | *bool*   | Appear only on Home    | ✘        |
 
 ```php {9}
 /*
@@ -63,9 +49,9 @@ O *Array* de javascript carrega na ordem adicionada e recebe alguns parâmetros:
 |--------------------------------------------------------------------------
 */
 'js'  => [
-  'select2'       => [ 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js' ],
-  'app-script'    => [ 'assets/js/app.min.js' ],
-  'home-script'   => [ 'assets/js/home.min.js', true ],
-  'custom-script' => [ 'assets/js/myCustomScript.js' ],
+  [ 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js' ],
+  [ 'assets/js/app.min.js' ],
+  [ 'assets/js/home.min.js', true ],
+  [ 'assets/js/myCustomScript.js'],
 ],
 ```

@@ -1,50 +1,48 @@
 ---
 id: introduction
-title: Introdução
-sidebar_label: Introdução
-slug: /
+title: Introduction
+sidebar_label: Introduction
 ---
 
-O [Onyx Theme](https://github.com/andremacola/onyx-theme) tem um modo específico de funcionamento e estrutura de pastas. Ele não segue a estrutura padrão de desenvolvimento do WordPress.
+The [Onyx Theme](https://github.com/andremacola/onyx-theme) has a specific mode of operation and folder structure. It does not follow the standard WordPress development.
 
-Todos as queries e templates **são gerenciados** pelos `controllers`/`timber` que relacionam com as `views`. Veja mais informações em [Views](views).
+All queries and templates **are managed** by the `controllers` /` timber` that relate to the `views`. See more information in [Views](views).
 
-Nenhuma dependência além do Timber é requerida. Todo o funcionamento do Onyx se mantém nas **bases originais** do WordPress.
+No dependency other than Timber is required. The entire operation of Onyx remains on the **original bases** of WordPress.
 
 ---
 
-## Estrutura de Pastas
+## Folder Structure
 
-- **`core/`** - <sup>É onde reside toda a estrutura principal do tema</sup>
-  - `./app` - <sup>Classes para funcionamento do tema</sup>
-    - `./Api` - <sup>Controllers dos endpoints da WP REST API</sup>
-    - `./Controllers` - <sup>Controllers das requisições</sup>
-    - `./Onyx` - <sup>Classes do Onyx</sup>
-  - `./config` - <sup>Reside todas as principais configurações de funcionamento do seu projeto.</sup>
-  - `./includes` - <sup>Suas funções e classes próprias.</sup>
-  - `./lang` - <sup>Traduções</sup>
+- **`core/`** - <sup>This is where the main structure of the theme resides</sup>
+  - `./app` - <sup>Classes for theme operation</sup>
+    - `./Api` - <sup>WP REST API endpoint controllers</sup>
+    - `./Controllers` - <sup>Requisition Controllers</sup>
+    - `./Onyx` - <sup>Onyx classes</sup>
+  - `./config` - <sup>Resides all the main functional configurations of your project</sup>
+  - `./includes` - <sup>Your own functions and classes</sup>
+  - `./lang` - <sup>Translations</sup>
 
-- **`src/`** - <sup>Arquivos fontes para estilos e javascripts.</sup>
+- **`src/`** - <sup>Source files for styles and javascripts</sup>
   - `./sass`
   - `./js`
 
-- **`views/`** - <sup>Templates Twig</sup>
+- **`views/`** - <sup>Twig Templates</sup>
 
 ---
 
 ## Timber
 
-Todos os templates são criados utilizando o [Twig](https://twig.symfony.com/) por meio do plugin [Timber](https://www.upstatement.com/timber/). Para ter mais informações e uma documentação mais detalhada sobre o Timber/Twig ***[acesse este link.](https://timber.github.io/docs/v2/)***
+All templates are created using [Twig](https://twig.symfony.com/) through the [Timber](https://www.upstatement.com/timber/) plugin. For more information and more detailed documentation on Timber/Twig ***[access this link.](Https://timber.github.io/docs/v2/)***
 
-O *Onyx theme* possui controladores em cima do *Timber*, então antes de consultar a documentação do Timber, verifique se as classes e métodos utilizados pelo Onyx atendem as suas necessidades.
+*Onyx theme* has controllers on top of *Timber*, so before consulting the Timber documentation, check if the classes and methods used by Onyx meet your needs.
 
-## Projetos Utilizando
+## Projects Using
 
-Alguns projetos que utilizam o [Onyx Theme](https://github.com/andremacola/onyx-theme) como principal ferramenta de produção.
+Some projects that use the [Onyx Theme](https://github.com/andremacola/onyx-theme) as the main production tool.
 
 - [O Imparcial](https://oimparcial.com.br/)
 - [Rofe Distribuidora](https://www.rofedistribuidora.com.br/)
 - [Linhares Jr](https://linharesjr.com)
-- [Marrapa](https://marrapa.com/)
 - [Grupo Dimensão](http://grupodimensao.com/) (legacy version)
 - [Jornal Pequeno](https://jornalpequeno.com.br/) (legacy version)

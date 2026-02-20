@@ -1,31 +1,31 @@
 ---
 id: sidebars
-title: Registro de Sidebars
+title: Register Sidebars
 sidebar_label: Sidebars
 ---
 
-Criação de [Sidebars](https://developer.wordpress.org/themes/functionality/sidebars/) personalizadas para uso em *Aparências -> Widgets* e no front-end em `./core/config/sidebars.php`
+Register custom Sidebars for *Appearances -> Widgets* with this file `./core/config/sidebars.php`
 
 ---
 
-## Parâmetros
+## Parameters
 
-| Param            | Tipo     | Descrição                                            | Obrigatório |
+| Param            | Type     | Description                                            | Required |
 |------------------|----------|------------------------------------------------------|-------------|
-| `$name`          | *string* | Padrão: $name                                        | ✔           |
-| `$id`            | *bool*   | Padrão: $id                                          | ✘           |
-| `$description`   | *string* | Padrão: ' '                                          | ✘           |
-| `$class`         | *bool*   | Padrão: widget-$id                                   | ✘           |
-| `$before_widget` | *string* | Padrão: &lt;div id="%1$s" class="side-section %2$s"> | ✘           |
-| `$after_widget`  | *bool*   | Padrão: &lt;/div>                                    | ✘           |
-| `$before_title`  | *string* | Padrão: &lt;h6 class='side-title'>                   | ✘           |
-| `$after_title`   | *bool*   | Padrão: &lt;/h6>                                     | ✘           |
+| `$name`          | *string* | Default: $name                                        | ✔           |
+| `$id`            | *bool*   | Default: $id                                          | ✘           |
+| `$description`   | *string* | Default: ' '                                          | ✘           |
+| `$class`         | *bool*   | Default: widget-$id                                   | ✘           |
+| `$before_widget` | *string* | Default: &lt;div id="%1$s" class="side-section %2$s"> | ✘           |
+| `$after_widget`  | *bool*   | Default: &lt;/div>                                    | ✘           |
+| `$before_title`  | *string* | Default: &lt;h6 class='side-title'>                   | ✘           |
+| `$after_title`   | *bool*   | Default: &lt;/h6>                                     | ✘           |
 
 Somente o parâmetro **name é obrigatório**.
 
 ---
 
-## Exemplo de Uso
+## Example of use
 
 ```php
 return [
